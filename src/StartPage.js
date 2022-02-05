@@ -1,5 +1,7 @@
 // import {render} from 'react-dom';
 import styled from 'styled-components';
+import { gsap } from "gsap";
+import { useRef, useEffect } from 'react'
 import {Section} from './components/styles/Section.styled'
 import carleft from './assets/car-white-1.0ce8111a (1).png'
 import carright from './assets/car-white-2.ec706134.png'
@@ -9,6 +11,17 @@ import currentVehicle from './assets/app-1.cf9c774d.png'
 import logo1 from './assets/logo-white.bf5c5867.svg'
 
 export default function StartPage() {
+    var tl = gsap.timeline();
+    const carRef = useRef();
+    const carRef2 = useRef();
+    const carRef3 = useRef();
+
+    useEffect(() => {
+        gsap.from(carRef.current, {duration: .75, x:-1000})
+        gsap.from(carRef2.current, {duration: .75, x:-1000})
+        gsap.from(carRef3.current, {duration: .75, x:-1000})
+      });
+    
 
     const ElDiv = styled.div`
     display: flex;
@@ -20,30 +33,27 @@ export default function StartPage() {
     position: absolute;
     top: 0px;
     left: 0px;
-    box-sizing: border-box;
     `
     const CompanyLogo1 = styled.img`
     height: 100%;
     margin-left: 5px;
-    box-sizing: border-box;
     `
     const Title = styled.h1`
-    font-size: 8vw;
+    font-size: 3vw;
     line-height: 9vw;
     font-family: Bebas Neue,sans-serif;
     text-transform: uppercase;
     text-align: left;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
-    color: white;
-    display: block;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    color: white;
+    display: block;
     font-weight: bold;
     letter-spacing: -0.256vw
     white-space: pre-line;
     margin: 0px;
-    box-sizing: border-box;
   `
   const DownloadDiv = styled.div`
     transform: translateY(0%);
@@ -55,7 +65,6 @@ export default function StartPage() {
     opacity: 1;
     padding: 50px 0px;
     display: block;
-    box-sizing: border-box;
     `
     const AppDiv = styled.div`
     position: absolute;
@@ -68,11 +77,9 @@ export default function StartPage() {
     transform: translateX(0%);
     opacity: 1;
     display: block;
-    box-sizing: border-box;
     `
     const CarOuterDiv = styled.div`
     display: block;
-    box-sizing: border-box;
     `
     const CarInnerDiv = styled.div`
     position: absolute;
@@ -81,7 +88,6 @@ export default function StartPage() {
     width: 100%;
     height: 200px;
     background-color: rgb(255, 255, 255);
-    box-sizing: border-box;
     display: block;
     `
     const CarLeft = styled.img`
@@ -90,7 +96,6 @@ export default function StartPage() {
     width: 34.4vw;
     bottom: 150px;
     left: -6.5%;
-    box-sizing: border-box;
     `
 
     const CarRight= styled.img`
@@ -99,7 +104,6 @@ export default function StartPage() {
     bottom: 135px;
     left: 23%;
     position: absolute;
-    box-sizing: border-box;
     `
 
     const CarMiddle = styled.img`
@@ -108,12 +112,17 @@ export default function StartPage() {
     width: 45.7vw;
     bottom: 110px;
     left: 6%;
-    box-sizing: border-box;
     `
     const AppImg = styled.img`
     width: 100%;
-    box-sizing: border-box;
+    position: absolute;
+    right: 8%;
+    top: 100px;
+    width: 36.7vh;
     font-size: 0px;
+    border-radius: 35px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) -20px 20px 25px);
+}
     `
 return(
     <Section>
@@ -124,13 +133,15 @@ return(
       <Title>
         DRIVE A NEW CAR WHENEVER YOU WANT
       </Title>
+      <DownloadDiv>
       <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} href="https://testflight.apple.com/join/dfAnfpPZ">Subscribe. Drive. Swap. Download Today <img src={arrow}/></a>
+      </DownloadDiv>
       </TitleDiv>
       <CarOuterDiv>
-          <CarInnerDiv>
-      <CarLeft alt='carleft' src={carleft} />
-      <CarRight alt='carright' src={carright} />
-      <CarMiddle alt='carmiddle' src={carmiddle} />
+          <CarInnerDiv >
+      <CarLeft ref={carRef} className='cars' alt='carleft' src={carleft} />
+      <CarRight ref={carRef2} className='cars' alt='carright' src={carright} />
+      <CarMiddle ref={carRef3} className='cars' alt='carmiddle' src={carmiddle} />
           </CarInnerDiv>
       </CarOuterDiv>
       <AppDiv>
