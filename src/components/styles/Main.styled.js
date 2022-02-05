@@ -1,0 +1,9 @@
+import styled from 'styled-components';
+
+export const Main = styled.main`
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: block;
+`

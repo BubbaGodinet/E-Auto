@@ -1,9 +1,9 @@
+import {Section2} from './components/styles/Section2.styled'
+
 export default function SwitchCarsPage() {
     return(
-        <section classname='switch-section'>
-            <div>
-              <h1>switch Page</h1>
-            </div>
-        </section>
+        <Section2>
+
+        </Section2>
     )
 }

@@ -1,12 +1,10 @@
-
+import {Section2} from './components/styles/Section2.styled'
 
 export default function CustomerPage() {
     return(
-        <section classname='customer-section'>
-            <div>
-              <h1>Customer Page</h1>
-            </div>
-        </section>
+        <Section2>
+
+        </Section2>
     )
 }
 

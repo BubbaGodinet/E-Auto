@@ -1,12 +1,22 @@
-import { Routes, Route, Link } from "react-router-dom";
+// import { Routes, Route, Link } from "react-router-dom";
+import CustomerPage from './CustomerPage'
+import DoorDeliveryPage from './DoorDeliveryPage'
+import SelectVehiclePage from './SelectVehiclePage'
+import StartPage from './StartPage'
+import SummaryPage from './SummaryPage'
+import SwitchCarsPage from './SwitchCarsPage'
+import {Main} from './components/styles/Main.styled'
 
 function App() {
   return (
-    <section>
-    <div>
-      <h1>App Page</h1>
-    </div>
-    </section>
+    <Main>
+    <StartPage/>
+    <SelectVehiclePage/>
+    <DoorDeliveryPage/>
+    <SwitchCarsPage/>
+    <SummaryPage/>
+    <CustomerPage/>
+    </Main>
   );
 }
 

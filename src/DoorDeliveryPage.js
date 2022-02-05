@@ -1,9 +1,9 @@
+import {Section2} from './components/styles/Section2.styled'
+
 export default function DoorDeliveryPage() {
     return(
-        <section classname='delivery-section'>
-            <div>
-              <h1>Delivery Page</h1>
-            </div>
-        </section>
+        <Section2>
+
+        </Section2>
     )
 }

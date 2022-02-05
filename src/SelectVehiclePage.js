@@ -1,9 +1,9 @@
+import {Section2} from './components/styles/Section2.styled'
+
 export default function SelectVehiclePage() {
     return(
-        <section classname='select-section'>
-            <div>
-              <h1>select Page</h1>
-            </div>
-        </section>
+        <Section2>
+
+        </Section2>
     )
 }
