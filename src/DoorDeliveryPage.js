@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 import { gsap } from "gsap";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import map from './assets/map.3f0298de.png'
 import car from './assets/porsche-right.981532db.png'
 import app from './assets/app-2.35887031.png'
 
 
 export default function DoorDeliveryPage() {
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.deliverCar', {scrollTrigger: {trigger:'.mapDiv', markers:true},duration: 3, rotation: 360, opacity: 1})
 
     const DoorSection = styled.section`
     transform: translateX(0%);
@@ -15,7 +18,7 @@ export default function DoorDeliveryPage() {
     height: 100vh;
     display: flex;
 
-    div.text {
+    div.deliverText {
         flex: 1 1 0%;
         margin-top: 10%;
         display: block;
@@ -66,7 +69,7 @@ export default function DoorDeliveryPage() {
         width: 100%;
     }
 
-    img.car {
+    img.deliverCar {
         transform: translate(-45%, 20%);
         opacity: 1;
         position: absolute;
@@ -93,7 +96,7 @@ export default function DoorDeliveryPage() {
     `
     return(
         <DoorSection>
-            <div className='text' >
+            <div className='deliverText' >
                  <h2>DELIVERED TO YOUR DOOR.</h2>
                  <p>Eleanor works with your schedule to have a
           white-glove delivery service deliver your new
@@ -104,7 +107,7 @@ export default function DoorDeliveryPage() {
                 <div className="mapDiv">
                     <img className='map' alt='map' src={map} />
                 </div>
-                <img className='car' alt='porsche' src={car}/>
+                <img className='deliverCar' alt='porsche' src={car}/>
                 <div className="appDiv">
                     <img className='app' alt='app' src={app}/>
                 </div>

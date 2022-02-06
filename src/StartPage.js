@@ -12,14 +12,21 @@ import logo1 from './assets/logo-white.bf5c5867.svg'
 
 export default function StartPage() {
     var tl = gsap.timeline();
+    const sectionRef = useRef()
+    const appRef = useRef();
     const carRef = useRef();
     const carRef2 = useRef();
     const carRef3 = useRef();
+    const subscribe = useRef();
+    const title = useRef();
 
     useEffect(() => {
-        gsap.from(carRef.current, {duration: .75, x:-1000})
-        gsap.from(carRef2.current, {duration: .75, x:-1000})
-        gsap.from(carRef3.current, {duration: .75, x:-1000})
+        tl.from(sectionRef.current,{duration: .85, x:-5000})
+        gsap.to(carRef.current, {duration: .55, x:0})
+        gsap.to(carRef2.current, {duration: .55, x:0})
+        gsap.to(carRef3.current, {duration: .55, x:0})
+        gsap.to(appRef.current, {duration: .65, x: 0, delay: .65, opacity: 1, ease: "sine.out"})
+        gsap.from('.text', {duration: .65, y: 100, opacity: 0, delay: .65, stagger: 0.10})
       });
     
 
@@ -40,7 +47,7 @@ export default function StartPage() {
     `
     const Title = styled.h1`
     font-size: 3vw;
-    line-height: 9vw;
+    line-height: 6vw;
     font-family: Bebas Neue,sans-serif;
     text-transform: uppercase;
     text-align: left;
@@ -56,12 +63,12 @@ export default function StartPage() {
     margin: 0px;
   `
   const DownloadDiv = styled.div`
-    transform: translateY(0%);
+    transform: translateY(100%);
     opacity: 1;
     display: block;
     `
     const TitleDiv = styled.div`
-    transform: translateY(0%);
+    transform: translateY(100%);
     opacity: 1;
     padding: 50px 0px;
     display: block;
@@ -74,8 +81,8 @@ export default function StartPage() {
     font-size: 0px;
     border-radius: 35px;
     filter: drop-shadow(rgba(0, 0, 0, 0.4) -20px 20px 25px);
-    transform: translateX(0%);
-    opacity: 1;
+    transform: translateX(100%);
+    opacity: 0;
     display: block;
     `
     const CarOuterDiv = styled.div`
@@ -91,7 +98,7 @@ export default function StartPage() {
     display: block;
     `
     const CarLeft = styled.img`
-    transform: translateX(0%);
+    transform: translateX(100%);
     position: absolute;
     width: 34.4vw;
     bottom: 150px;
@@ -99,7 +106,7 @@ export default function StartPage() {
     `
 
     const CarRight= styled.img`
-    transform: translateX(0%);
+    transform: translateX(100%);
     width: 43.8vw;
     bottom: 135px;
     left: 23%;
@@ -107,7 +114,7 @@ export default function StartPage() {
     `
 
     const CarMiddle = styled.img`
-    transform: translateX(0%);
+    transform: translateX(100%);
     position: absolute;
     width: 45.7vw;
     bottom: 110px;
@@ -125,15 +132,16 @@ export default function StartPage() {
 }
     `
 return(
-    <Section>
+    <>
       <ElDiv>
         <a style={{height: '1.875vw', zIndex: '1', boxSizing: 'border-box', }} href='https://www.eleanorauto.com/'><CompanyLogo1 alt='logo1' src={logo1} /></a>
       </ElDiv>
-      <TitleDiv>
+    <Section ref={sectionRef}>
+      <TitleDiv className='text' ref={title}>
       <Title>
         DRIVE A NEW CAR WHENEVER YOU WANT
       </Title>
-      <DownloadDiv>
+      <DownloadDiv className='text' ref={subscribe}>
       <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} href="https://testflight.apple.com/join/dfAnfpPZ">Subscribe. Drive. Swap. Download Today <img src={arrow}/></a>
       </DownloadDiv>
       </TitleDiv>
@@ -144,9 +152,10 @@ return(
       <CarMiddle ref={carRef3} className='cars' alt='carmiddle' src={carmiddle} />
           </CarInnerDiv>
       </CarOuterDiv>
-      <AppDiv>
-        <AppImg src={currentVehicle}/>
+      <AppDiv ref={appRef}>
+        <AppImg ref={appRef} src={currentVehicle}/>
       </AppDiv>
     </Section>
+    </>
   );
 }
