@@ -62,7 +62,7 @@ export default function StartPage() {
     white-space: pre-line;
     margin: 0px;
   `
-  const DownloadDiv = styled.div`
+    const DownloadDiv = styled.div`
     transform: translateY(100%);
     opacity: 1;
     display: block;
@@ -139,10 +139,10 @@ return(
     <Section ref={sectionRef}>
       <TitleDiv className='text' ref={title}>
       <Title>
-        DRIVE A NEW CAR WHENEVER YOU WANT
+        DRIVE A NEW CAR EVERY MONTH.
       </Title>
       <DownloadDiv className='text' ref={subscribe}>
-      <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} href="https://testflight.apple.com/join/dfAnfpPZ">Subscribe. Drive. Swap. Download Today <img src={arrow}/></a>
+      <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} href="https://testflight.apple.com/join/dfAnfpPZ">Available On The App Today <img src={arrow}/></a>
       </DownloadDiv>
       </TitleDiv>
       <CarOuterDiv>

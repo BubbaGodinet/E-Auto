@@ -165,12 +165,11 @@ export default function CustomerPage() {
             </CustomerDiv>
             <ReviewDiv>
                 <h2>CUSTOMERS WITH THAT NEW CAR SMELL.</h2>
-                <p className='review'>With Eleanor I was able to drive a few of my dream cars this year.
-            My friends keep asking where all the new cars are coming from :</p>
+                <p className='review'>“With Eleanor I was able to drive 2 of my dream cars this year!  The process is always easy and affordable!”</p>
                 <p className='reviewer'>Alex Bateman, Interface Designer</p>
                 <div className='spacer'/>
                 <DownloadDiv>
-                    <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} href="https://testflight.apple.com/join/dfAnfpPZ">Subscribe. Drive. Swap. Download Today <img src={arrow}/></a>
+                    <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} href="https://testflight.apple.com/join/dfAnfpPZ">Available On The App Today <img src={arrow}/></a>
                  </DownloadDiv>
             </ReviewDiv>
         </Section2>
@@ -179,6 +178,8 @@ export default function CustomerPage() {
             <FAQDiv>
                <a className='logo' href='https://www.eleanorauto.com/'><img alt='logo' src={logo}/></a>
                <div/>
+               <a className='faq' href='http://help.eleanorauto.com'>About Us</a>
+               <a className='faq' href='http://help.eleanorauto.com'>Terms of Use</a>
                <a className='faq' href='http://help.eleanorauto.com'>FAQ</a>
             </FAQDiv>
         </FooterDiv>

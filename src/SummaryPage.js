@@ -15,14 +15,12 @@ export default function SummaryPage() {
     height: 100%;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    box-sizing: border-box;
 
     div {
         transform: translate3d(0px, 0px, 0px);
         opacity: 1;
         background-color: rgb(244, 244, 245);
         display: flex;
-        box-sizing: border-box;
         -webkit-box-pack: center;
         justify-content: center;
         -webkit-box-align: center;
@@ -45,12 +43,6 @@ export default function SummaryPage() {
         letter-spacing: -0.01vw;
         line-height: 1;
         margin: 2vw 0px 1vw;
-        display: block;
-        margin-block-start: 0.83em;
-        margin-block-end: 0.83em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        box-sizing: border-box;
     }
 
     p {
@@ -61,12 +53,6 @@ export default function SummaryPage() {
         letter-spacing: -0.03vw;
         line-height: 1.5;
         margin: 0px;
-        display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        box-sizing: border-box;
         width: 55%;
     }
     `
@@ -77,22 +63,21 @@ export default function SummaryPage() {
                     <img alt='coin' src={coin}/>
                     <div>
                         <h2>SIMPLY MONTHLY PRICING</h2>
-                        <p>No more restricting leases or loans. Simple month-to-month pricing. No hidden fees!</p>
+                        <p>Pick your plan, pay the monthly price. Thats it. No hidden fees!</p>
                     </div>
                 </div>
                 <div>
                     <img alt='doc' src={doc}/>
                     <div>
                         <h2>VEHICLE INSURANCE INCLUDED</h2>
-                        <p>That’s right, you’re protected.  All Eleanor plans 
-                            include full insurance coverage.</p>
+                        <p>That’s right, you’re covered.  All Eleanor plans include insurance coverage.</p>
                     </div>
                 </div>
                 <div>
                     <img alt='wrench' src={wrench}/>
                     <div>
                         <h2>MAINTENANCE IS COVERED</h2>
-                        <p>Leave it to us.  Don’t worry about maintaining your vehicle.  Eleanor covers that as well.</p>
+                        <p>Leave it us. Don’t worry about maintaining your vehicle. Eleanor covers that as well.</p>
                     </div>
                 </div>
             </SummaryWrapper>

@@ -194,21 +194,21 @@ export default function SelectVehiclePage() {
                                         <IconImg className='icon' alt='pump' src={pump}/> 
                                         <Span className='span'>MPG</Span>
                                     </TdImg>
-                                    <Td className='td'>19/24</Td>
+                                    <Td className='td'>25/29</Td>
                                 </Tr>
                                 <Tr>
                                     <TdImg> 
                                         <IconImg className='icon' alt='hp' src={hp}/> 
                                         <Span className='span'>HP</Span>
                                     </TdImg>
-                                    <Td className='td'>397</Td>
+                                    <Td className='td'>247</Td>
                                 </Tr>
                                 <Tr>
                                     <TdImg> 
                                         <IconImg className='icon' alt='gauge' src={gauge}/> 
                                         <Span className='span'>0-60</Span>
                                     </TdImg>
-                                    <Td className='td'>4.2</Td>
+                                    <Td className='td'>6.4</Td>
                                 </Tr>
                             </Tbody>
                         </Table>
@@ -220,9 +220,7 @@ export default function SelectVehiclePage() {
             </ContainerDiv>
             <TextContainer>
                 <TitleH2>SELECT A VEHICLE FROM YOUR PHONE.</TitleH2>
-                <Summary>We have three tiers of luxury vehicles to choose from, each with all-inclusive pricing.
-                   Once you’ve picked the car you want to drive from our lineup, all we need is a driver’s
-                   license and an address to deliver the car. No gimmicks. No hidden fees.</Summary>
+                <Summary>Select from a wide range of luxury vehicles in our inventory.  Drive it for a month, trade it the next for something else you have always wanted to own.</Summary>
             </TextContainer>
         </Section2>
     )

@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { gsap } from "gsap";
+import {useEffect} from 'react'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import map from './assets/map.3f0298de.png'
 import car from './assets/porsche-right.981532db.png'
 import app from './assets/app-2.35887031.png'
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default function DoorDeliveryPage() {
 
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to('.deliverCar', {scrollTrigger: {trigger:'.mapDiv', markers:true},duration: 3, rotation: 360, opacity: 1})
+    
 
     const DoorSection = styled.section`
     transform: translateX(0%);
@@ -22,6 +23,7 @@ export default function DoorDeliveryPage() {
         flex: 1 1 0%;
         margin-top: 10%;
         display: block;
+        opacity: 1;
     }
 
     h2 {
@@ -94,14 +96,18 @@ export default function DoorDeliveryPage() {
         width: 100%;
     }
     `
+    useEffect(() => {
+    gsap.from('.mapDiv', {scrollTrigger: {trigger:'.mapDiv', markers:true}, duration: .4, x: 2000, opacity: 1}, 'Start')
+    gsap.from('.deliverText', {scrollTrigger: {trigger:'.deliverText', markers:true}, duration: .55, y: -300, opacity: 0, stagger: .20}, 'Start')
+    gsap.from('.appDiv', {scrollTrigger: {trigger:'.appDiv', markers:true}, duration: .55, y: -300, opacity: 0, delay: .75}, 'Start')
+    gsap.from('.deliverCar', {scrollTrigger: {trigger:'.deliverCar', markers:true}, duration: .75, x:-800, opacity: 0}, 'Start')
+    })
+
     return(
         <DoorSection>
             <div className='deliverText' >
-                 <h2>DELIVERED TO YOUR DOOR.</h2>
-                 <p>Eleanor works with your schedule to have a
-          white-glove delivery service deliver your new
-          vehicle right to your door. Your live vehicle
-          concierge is available to answer questions 24/7.</p>
+                 <h2 className='deliverText'>DELIVERED TO YOUR DOOR.</h2>
+                 <p className='deliverText'>Eleanor works with your schedule to have a white-glove delivery service deliver your new vehicle right to your door.</p>
             </div>
             <div className="container">
                 <div className="mapDiv">
