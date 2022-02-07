@@ -30,9 +30,9 @@ export default function DoorDeliveryPage() {
         transform: translateY(0%);
         opacity: 1;
         color: rgb(43, 49, 68);
-        font-size: 6vw;
+        font-size: 4vw;
         font-weight: bold;
-        line-height: 6vw;
+        line-height: 4.5vw;
         margin: 0px;
         white-space: pre-line;
         font-family: Bebas Neue,sans-serif;
@@ -46,10 +46,10 @@ export default function DoorDeliveryPage() {
         font-size: 1vw;
         font-weight: normal;
         line-height: 1.8vw;
-        width: 90%;
+        width: 20vw;
         white-space: pre-line;
         margin-top: 2vw;
-        width: 55%;
+        width: 70%;
     }
 
     div.container {
@@ -81,7 +81,7 @@ export default function DoorDeliveryPage() {
     }
 
     div.appDiv {
-        transform: translate(0%, 0%);
+        transform: translate(0%, 5%);
         opacity: 1;
         position: absolute;
         left: 38%;
@@ -107,7 +107,7 @@ export default function DoorDeliveryPage() {
         <DoorSection>
             <div className='deliverText' >
                  <h2 className='deliverText'>DELIVERED TO YOUR DOOR.</h2>
-                 <p className='deliverText'>Eleanor works with your schedule to have a white-glove delivery service deliver your new vehicle right to your door.</p>
+                 <p className='deliverText'>Eleanor works with your schedule to have a <br/> white-glove delivery service deliver your new <br/> vehicle right to your door.</p>
             </div>
             <div className="container">
                 <div className="mapDiv">

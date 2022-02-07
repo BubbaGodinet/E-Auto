@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 import { gsap } from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useEffect} from "react"
 import {Section2} from './components/styles/Section2.styled'
 import alex from './assets/guy.1b56a7ff.png'
 import car from './assets/car-white-2.ec706134.png'
 import logo from './assets/logo-black.a224c461.svg'
 import arrow from './assets/arrow-right.a3256c0c.svg'
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function CustomerPage() {
 
     const CustomerDiv = styled.div`
-    background-color:  rgb(251, 200, 67);
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
@@ -18,14 +21,27 @@ export default function CustomerPage() {
     height: 80vh;
     width: 40vw;
     `
+    const CustomerInnerDiv = styled.div`
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    `
+    const BackgroundDiv  = styled.div`
+    transform: translateX(-100%);
+    width: 100%;
+    height: 100%;
+    background-color:  rgb(251, 200, 67);
+    `
     const GuyImg = styled.img`
-        transform: translateX(0%);
-        opacity: 1;
+        transform: translateX(-100%);
+        opacity: 0;
         width: 70%;
     `
     const CarImg = styled.img`
-    transform: translate(50%, 50%);
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -41,19 +57,12 @@ export default function CustomerPage() {
 
     h2 { 
         color: rgb(43, 49, 68);
-        font-size: 3vw;
+        font-size: 3.5vw;
         font-weight: bold;
-        line-height: 6vw;
+        line-height: 4.5vw;
         margin: 0px;
         white-space: pre-line;
-        font-family: Bebas Neue,sans-serif;
-        text-transform: uppercase;
-
-        display: block;
-        margin-block-start: 0.83em;
-        margin-block-end: 0.83em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
+        letter-spacing: 0vw;
     }
 
     p.review {
@@ -64,12 +73,7 @@ export default function CustomerPage() {
         width: 90%;
         white-space: pre-line;
         margin-top: 2vw;
-
-        display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
+        width: 55%;
     }
 
     p.reviewer {
@@ -78,12 +82,6 @@ export default function CustomerPage() {
         font-weight: 600;
         letter-spacing: 0.02vw;
         line-height: 1.6vw;
-        display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-
     }
 
     div.spacer {
@@ -91,8 +89,6 @@ export default function CustomerPage() {
          height: 0.25vw;
          width: 100%;
          margin: 4.4vh 0px;
-    
-         display: block;
     }
     `
     const FooterDiv = styled.div`
@@ -133,13 +129,12 @@ export default function CustomerPage() {
 
     img { 
         height: 1.2vw;
-
     }
 
     a.faq {
         padding: 10px 20px;
         color: rgb(65, 74, 105);
-        font-size: 1.2vw;
+        font-size: 1 vw;
         font-weight: 600;
         letter-spacing: -0.02vw;
         text-decoration: none;
@@ -147,24 +142,33 @@ export default function CustomerPage() {
     
     div {
         flex: 1 1 0%;
-
-        display: block;
     }
     `
     const DownloadDiv = styled.div`
     transform: translateY(0%);
     opacity: 1;
-    display: block;
     `
+
+    useEffect(() => {
+        gsap.to('.backgroundDiv', {scrollTrigger: '.backgroundDiv', duration: .45, opacity: 1, x:0}, 'Start');
+        gsap.to('.guyImg', {duration: .35, x:0, opacity: 1, delay: .40})
+        gsap.fromTo('.carImg', {x: -100}, {duration: .35, x:730, y:190, opacity: 1, delay: .40})
+        gsap.from('.reviewDiv', {scrollTrigger: '.reviewDiv', duration: .55, y: -300, opacity: 0, delay: .70}, 'Start')
+        },[])
+  
     return(
         <>
         <Section2>
             <CustomerDiv>
-                <GuyImg alt='guy' src={alex}/>
-                <CarImg alt='guy' src={car}/>
+                <CustomerInnerDiv >
+                    <BackgroundDiv className="backgroundDiv">
+                    </BackgroundDiv>
+                </CustomerInnerDiv>
+                <GuyImg alt='guy' className='guyImg' src={alex}/>
+                <CarImg alt='guy' className='carImg' src={car}/>
             </CustomerDiv>
-            <ReviewDiv>
-                <h2>CUSTOMERS WITH THAT NEW CAR SMELL.</h2>
+            <ReviewDiv className="reviewDiv">
+                <h2>CUSTOMERS WITH <br/> THAT NEW CAR SMELL</h2>
                 <p className='review'>“With Eleanor I was able to drive 2 of my dream cars this year!  The process is always easy and affordable!”</p>
                 <p className='reviewer'>Alex Bateman, Interface Designer</p>
                 <div className='spacer'/>
@@ -178,9 +182,9 @@ export default function CustomerPage() {
             <FAQDiv>
                <a className='logo' href='https://www.eleanorauto.com/'><img alt='logo' src={logo}/></a>
                <div/>
-               <a className='faq' href='http://help.eleanorauto.com'>About Us</a>
-               <a className='faq' href='http://help.eleanorauto.com'>Terms of Use</a>
-               <a className='faq' href='http://help.eleanorauto.com'>FAQ</a>
+               <a className='faq' href=''>About Us</a>
+               <a className='faq' href=''>Terms of Use</a>
+               <a className='faq' href=''>FAQ</a>
             </FAQDiv>
         </FooterDiv>
         </>

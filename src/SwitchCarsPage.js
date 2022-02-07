@@ -62,9 +62,9 @@ export default function SwitchCarsPage() {
     transform: translateY(0%);
     opacity: 1;
     color: rgb(43, 49, 68);
-    font-size: 6vw;
+    font-size: 4vw;
     font-weight: bold;
-    line-height: 6vw;
+    line-height: 4.5vw;
     margin: 0px;
     white-space: pre-line;
     `
@@ -78,6 +78,7 @@ export default function SwitchCarsPage() {
     width: 90%;
     white-space: pre-line;
     margin-top: 2vw;
+    width: 25vw;
     `
     useEffect(() => {
         gsap.to('.carDiv', {scrollTrigger: '.textDiv', duration: .85, x:0}, 'Start');
@@ -98,7 +99,7 @@ export default function SwitchCarsPage() {
                 </AppImgDiv>
             </CarDiv>
             <TextDiv className='textDiv'>
-                <TitleH2 className='textDiv'>TRADE IN YOUR CAR EVERY MONTH</TitleH2>
+                <TitleH2 className='textDiv'>TRADE IN YOUR CAR EVERY MONTH.</TitleH2>
                 <P className='textDiv'>Use Eleanor Trade-In Credits to trade in your vehicle for something else in our luxurious inventory. Nothing says “June” like a new car!</P>
             </TextDiv>
         </Section2>

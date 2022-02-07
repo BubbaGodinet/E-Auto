@@ -81,16 +81,15 @@ export default function SelectVehiclePage() {
     `
     const NameH3 = styled.h3`
     color: rgb(0, 0, 0);
-    font-size: 4vw;
+    font-size: 2vw;
     font-weight: bold;
     margin: 0px;
     opacity: 0;
     `
     const YearH4 = styled.h4`
     color: rgb(65, 74, 105);
-    font-size: 1.08vw;
+    font-size: .65vw;
     font-weight: normal;
-    margin: 0px;
     line-height: 0.5;
     opacity: 0;
     `
@@ -120,7 +119,7 @@ export default function SelectVehiclePage() {
     const Td = styled.td`
     color: rgb(0, 0, 0);
     font-family: "Bebas Neue", sans-serif;
-    font-size: 2.2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     padding-top: 5px;
     opacity: 0;
@@ -151,9 +150,9 @@ export default function SelectVehiclePage() {
     `
     const TitleH2 = styled.h2`
     color: rgb(43, 49, 68);
-    font-size: 6vw;
+    font-size: 4vw;
     font-weight: bold;
-    line-height: 6vw;
+    line-height: 4.5vw;
     margin: 0px;
     white-space: pre-line;
     `
@@ -165,6 +164,7 @@ export default function SelectVehiclePage() {
     width: 90%;
     white-space: pre-line;
     margin-top: 2vw;
+    width: 30vw;
     `
     useEffect(() => {
     gsap.to('.background', {scrollTrigger: '.background', duration: .5, x:0}, 'Start');
@@ -220,7 +220,7 @@ export default function SelectVehiclePage() {
             </ContainerDiv>
             <TextContainer>
                 <TitleH2>SELECT A VEHICLE FROM YOUR PHONE.</TitleH2>
-                <Summary>Select from a wide range of luxury vehicles in our inventory.  Drive it for a month, trade it the next for something else you have always wanted to own.</Summary>
+                <Summary>Select from a wide range of luxury vehicles in our inventory. <br/>  Drive it for a month, trade it the next for something else you have always wanted to own.</Summary>
             </TextContainer>
         </Section2>
     )
