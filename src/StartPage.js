@@ -28,6 +28,7 @@ export default function StartPage() {
     align-items: center;
     padding: 0px 5%;
     position: absolute;
+    z-index: 11;
     top: 0px;
     left: 0px;
     `
@@ -35,7 +36,7 @@ export default function StartPage() {
     height: 100%;
     margin-left: 5px;
     @media screen and (max-width: 1000px) {
-        height: 3.882vw;
+        height: 3vw;
     }
     `
     const Title = styled.h1`

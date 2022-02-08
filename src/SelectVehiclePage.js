@@ -24,7 +24,7 @@ export default function SelectVehiclePage() {
     width: 33vw;
     padding: 30px;
     min-height: 40vw;
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 799px) {
         height: 50vh;
         min-height: 80vw;
         margin-top: 1vh;
@@ -33,6 +33,10 @@ export default function SelectVehiclePage() {
     }
     @media (min-width:800px) and (max-width:1200px) {
         height: 60vh;
+        min-height: 80vw;
+        margin-top: 1vh;
+        width: 100%;
+        padding: 30px;
     }
     `
     const SelectorDiv = styled.div`
@@ -44,7 +48,6 @@ export default function SelectVehiclePage() {
     overflow: hidden;
     `
     const SelectorBackGround = styled.div`
-    transform: translateX(100%);
     width: 100%;
     height: 100%;
     opacity: 1;
@@ -79,7 +82,18 @@ export default function SelectVehiclePage() {
     height: 100%;
     opacity: 0;
     `
-    const DataContainer = styled.div`
+    const DataContainer1 = styled.div`
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    @media screen and (max-width: 1000px) {
+        top: 13vw;
+        left: 5vw;
+    }
+    `
+    const DataContainer2 = styled.div`
     position: absolute;
     top: 0px;
     left: 0px;
@@ -192,18 +206,21 @@ export default function SelectVehiclePage() {
     transform: translateX(0%);
     position: absolute;
     width: 43vw;
-    bottom: 0px;
+    bottom: -31%;
     right: 0px;
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 799px) {
         width: 90vw;
         left: -40%;
+        top: 75vw;
     }
     @media (min-width: 800px) and (max-width: 1200px) {
-        top: 30vw;
+        left: -40%;
+        width: 90vw;
+        top: 55vw;
     }
     `
     const CarImg1 = styled.img`
-    opacity: 1;
+    opacity: 0;
     width: 100%;
     @media screen and (max-width: 1000px) {
         top: 10vw;
@@ -232,12 +249,12 @@ export default function SelectVehiclePage() {
     line-height: 4.5vw;
     margin: 0px;
     white-space: pre-line;
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 799px) {
         font-size: 7vw;
         line-height: 8.5vw;
         white-space: unset;
     }
-    @media screen and (max-width: 1300px) {
+    @media screen (min-width: 800px) and (max-width: 1300px) {
         font-size: 6vw;
         line-height: 6.5vw;
         white-space: unset;
@@ -260,121 +277,191 @@ export default function SelectVehiclePage() {
         width: 100%;
     }
     `
-    const [carState, setCarState] = useState(true);
+    // const [carState, setCarState] = useState(true);
+    const [index, setIndex] = useState(0)
     // const carState = useRef(true);
     const backgroundRef = useRef();
     const generatedCarRef = useRef();
     const selectText = useRef();
-    const dataText = useRef();
-    const tl = gsap.timeline();
+    // const dataText = useRef();
+    // const dataContainer1 = useRef();
+    // const dataContainer2 = useRef();
+    // const tl = gsap.timeline();
     
     useEffect(() => {
-        gsap.to(backgroundRef.current, {scrollTrigger: {trigger: '.background', start: 'top center', markers:true}, duration: .5, x:0}, 'Start')
+        gsap.fromTo(backgroundRef.current, {x:'100%'},{scrollTrigger: {trigger: backgroundRef.current, start: 'top center'}, duration: .85, x:'0%'}, 'Start')
+        gsap.from('.selectText', {scrollTrigger: {trigger: '.selectText', start: 'top center'}, duration: .55, y: -300, opacity: 0, stagger: .20}, 'Start')
         gsap.to('.dataText', {scrollTrigger: {trigger: '.dataText', start: 'top center'}, delay: .4, opacity: 1}, 'Start');
-        gsap.from(selectText.current, {scrollTrigger: {trigger: '.background', start: 'top center'}, duration: .55, y: -300, opacity: 0, stagger: .20}, 'Start')
-        gsap.fromTo('.car1', {x: '1000%',y: '30%'}, {scrollTrigger: {trigger: '.background', start: 'top center', markers:true}, duration: .65, x: '40%', opacity: 1}, 'Start')
-        if (carState === true) {
-            tl.fromTo('.car1', {x: '50%',y: '110%', opacity: 0}, {duration: .65, x: '40%', opacity: 1})
-            tl.fromTo('.car2', {x: '50%',y: '30%', opacity: 0}, {duration: .65, x: '-20%', opacity: 0})
-            tl.to('.dataText', {scrollTrigger: {trigger: '.dataText', start: 'top center'},  opacity: 1}, 'Start');
-            tl.to('.dataText2', {scrollTrigger: {trigger: '.dataText', start: 'top center'},  opacity: 1}, 'Start');
-        } else {
-            tl.fromTo('.car1', {x: '50%',y: '110%', opacity: 1}, {duration: .35, x: '-20%', opacity: 0})
-            tl.fromTo('.car2', {x: '50%',y: '30%', opacity: 0}, {duration: .65, x: '40%', opacity: 1})
-            tl.to('.dataText', {scrollTrigger: {trigger: '.dataText', start: 'top center'}, opacity: 1}, 'Start');
-            tl.to('.dataText2', {scrollTrigger: {trigger: '.dataText', start: 'top center'}, opacity: 1}, 'Start');
+        gsap.to('.arrowBttns', {scrollTrigger: {trigger: '.arrowBttns', start: 'top center'}, delay: .4, opacity: 1}, 'Start');
+        gsap.fromTo('.car1', {x: '1000%',y: '30%'}, {scrollTrigger: {trigger: '.car1', start: 'top center', markers:true}, duration: .65, x: '40%', opacity: 1}, 'Start')
+        if (index === 0) {
+            // gsap.to('.dataText', {scrollTrigger: {trigger: '.selectBackground', start: 'top center'}, delay: .4, opacity: 1}, 'Start');
+            gsap.fromTo('.car1', {x: '1000%',y: '30%'}, {scrollTrigger: {trigger: '.selectBackground', start: 'top center', markers:true}, duration: .65, x: '40%', opacity: 1}, 'Start')    
+        } else if (index % 2 === 0 && index > 0) {
+            gsap.fromTo('.car1', {x: '60%',y: '30%', opacity: 0}, {duration: .65, x: '40%', opacity: 1})
+            gsap.fromTo('.car2', {x: '50%',y: '-70%', opacity: 1}, {duration: .65, x: '-20%', opacity: 0})
+            gsap.to('.dataText', {opacity: 0, duration: .75, y: '-30%'});
+            gsap.to('.dataText1', {opacity: 1});
+            gsap.to('.dataText2', {opacity: 0, duration: .75, y: '-30%'});
+            gsap.to('.dataText3', {opacity: 0, duration: .75, y: '-30%'});
+        } else if (index % 2 === 1) {
+            gsap.fromTo('.car1', {x: '60%',y: '30%', opacity: 1}, {duration: .35, x: '-20%', opacity: 0})
+            gsap.fromTo('.car2', {x: '50%',y: '-70%', opacity: 0}, {duration: .65, x: '40%', opacity: 1})
+            gsap.to('.dataText3', {opacity: 1});
+            gsap.to('.dataText', {opacity: 0, duration: .75, y: '-30%'});
+            gsap.to('.dataText1', {opacity: 0, duration: .75, y: '-20%'});
+            gsap.to('.dataText2', {opacity: 0, duration: .75, y: '-30%'});
         }
-    },[carState])
-
+    }, [index])
 
     function handleSwitch() {
-        setCarState(!carState)
+        setIndex(index + 1)
     }
 
     return(
         <Section2>
             <ContainerDiv>
                 <SelectorDiv>
-                    <SelectorBackGround className='.background' ref={backgroundRef}/>
+                    <SelectorBackGround className='.selectBackground' ref={backgroundRef}/>
                 </SelectorDiv>
                 <ArrowsContainer>
                     <ArrowsDiv> 
-                        <ArrowButton> <ArrowButtonImg onClick={handleSwitch} className='dataText'ref={dataText} alt='leftarrow' src={arrowleft} /> </ArrowButton>
-                        <ArrowButton> <ArrowButtonImg onClick={handleSwitch}className='dataText' ref={dataText} alt='rightarrow' src={arrowright} /> </ArrowButton>
+                        <ArrowButton> <ArrowButtonImg onClick={handleSwitch} className='arrowBttns' alt='leftarrow' src={arrowleft} /> </ArrowButton>
+                        <ArrowButton> <ArrowButtonImg onClick={handleSwitch} className='arrowBttns' alt='rightarrow' src={arrowright} /> </ArrowButton>
                     </ArrowsDiv>
-                   {carState ? <DataContainer>
+                    <DataContainer1 className='dataContainer'>
                         <CarInfoDiv>
-                            <NameH3 className='dataText' ref={dataText}>Land Rover</NameH3>
-                            <YearH4 className='dataText' ref={dataText}>2019 - Range Rover Velar</YearH4>
+                            <NameH3 className='dataText'>Land Rover</NameH3>
+                            <YearH4 className='dataText'>2019 - Range Rover Velar</YearH4>
                         </CarInfoDiv>
                         <Table>
                             <Tbody>
                                 <Tr>
                                     <TdImg> 
-                                        <IconImg className='dataText' ref={dataText} alt='pump' src={pump}/> 
-                                        <Span className='dataText' ref={dataText}>MPG</Span>
+                                        <IconImg className='dataText'  alt='pump' src={pump}/> 
+                                        <Span className='dataText' >MPG</Span>
                                     </TdImg>
-                                     <Td className='dataText' ref={dataText}>25/29</Td>
+                                     <Td className='dataText' >25/29</Td>
                                 </Tr>
                                 <Tr>
                                     <TdImg> 
-                                        <IconImg className='dataText' ref={dataText} alt='hp' src={hp}/> 
-                                        <Span className='dataText' ref={dataText}>HP</Span>
+                                        <IconImg className='dataText' alt='hp' src={hp}/> 
+                                        <Span className='dataText' >HP</Span>
                                     </TdImg>
-                                    <Td className='dataText' ref={dataText}>247</Td>
+                                    <Td className='dataText'>247</Td>
                                 </Tr>
                                 <Tr>
                                     <TdImg> 
-                                        <IconImg className='dataText' ref={dataText} alt='gauge' src={gauge}/> 
-                                        <Span className='dataText' ref={dataText}>0-60</Span>
+                                        <IconImg className='dataText'  alt='gauge' src={gauge}/> 
+                                        <Span className='dataText' >0-60</Span>
                                     </TdImg>
-                                   <Td className='dataText' ref={dataText}>6.4</Td>
+                                   <Td className='dataText' >6.4</Td>
                                 </Tr>
                             </Tbody>
                         </Table>
-                    </DataContainer>
-                    :
-                    <DataContainer>
+                    </DataContainer1>
+                    <DataContainer1 className='dataContainer'>
                         <CarInfoDiv>
-                            <NameH3 className='dataText2' ref={dataText}>Porsche</NameH3>
-                            <YearH4 className='dataText2' ref={dataText}>2019 - 911 - Carrera S</YearH4>
+                            <NameH3 className='dataText1'>Land Rover</NameH3>
+                            <YearH4 className='dataText1'>2019 - Range Rover Velar</YearH4>
                         </CarInfoDiv>
                         <Table>
                             <Tbody>
                                 <Tr>
                                     <TdImg> 
-                                        <IconImg className='dataText2' ref={dataText} alt='pump' src={pump}/> 
-                                        <Span className='dataText2' ref={dataText}>MPG</Span>
+                                        <IconImg className='dataText1'  alt='pump' src={pump}/> 
+                                        <Span className='dataText1' >MPG</Span>
                                     </TdImg>
-                                     <Td className='dataText2' ref={dataText}>19/24</Td>
+                                     <Td className='dataText1' >25/29</Td>
                                 </Tr>
                                 <Tr>
                                     <TdImg> 
-                                        <IconImg className='dataText2' ref={dataText} alt='hp' src={hp}/> 
-                                        <Span className='dataText2' ref={dataText}>HP</Span>
+                                        <IconImg className='dataText1' alt='hp' src={hp}/> 
+                                        <Span className='dataText1' >HP</Span>
                                     </TdImg>
-                                    <Td className='dataText2' ref={dataText}>443</Td>
+                                    <Td className='dataText1'>247</Td>
                                 </Tr>
                                 <Tr>
                                     <TdImg> 
-                                        <IconImg className='dataText2' ref={dataText} alt='gauge' src={gauge}/> 
-                                        <Span className='dataText2' ref={dataText}>0-60</Span>
+                                        <IconImg className='dataText1'  alt='gauge' src={gauge}/> 
+                                        <Span className='dataText1' >0-60</Span>
                                     </TdImg>
-                                   <Td className='dataText2' ref={dataText}>3.2</Td>
+                                   <Td className='dataText1' >6.4</Td>
                                 </Tr>
                             </Tbody>
                         </Table>
-                    </DataContainer>
-                    }
+                    </DataContainer1>
+                    <DataContainer2>
+                        <CarInfoDiv>
+                            <NameH3 className='dataText2' >Porsche</NameH3>
+                            <YearH4 className='dataText2' >2019 - 911 Carrera S</YearH4>
+                        </CarInfoDiv>
+                        <Table>
+                            <Tbody>
+                                <Tr>
+                                    <TdImg> 
+                                        <IconImg className='dataText2'  alt='pump' src={pump}/> 
+                                        <Span className='dataText2'>MPG</Span>
+                                    </TdImg>
+                                     <Td className='dataText2' >19/24</Td>
+                                </Tr>
+                                <Tr>
+                                    <TdImg> 
+                                        <IconImg className='dataText2'  alt='hp' src={hp}/> 
+                                        <Span className='dataText2' >HP</Span>
+                                    </TdImg>
+                                    <Td className='dataText2'>443</Td>
+                                </Tr>
+                                <Tr>
+                                    <TdImg> 
+                                        <IconImg className='dataText2'  alt='gauge' src={gauge}/> 
+                                        <Span className='dataText2' >0-60</Span>
+                                    </TdImg>
+                                   <Td className='dataText2' >3.2</Td>
+                                </Tr>
+                            </Tbody>
+                        </Table>
+                    </DataContainer2>
+                    <DataContainer1 className='dataContainer'>
+                        <CarInfoDiv>
+                            <NameH3 className='dataText3'>Porsche</NameH3>
+                            <YearH4 className='dataText3'>2019 - 911 Carrera S</YearH4>
+                        </CarInfoDiv>
+                        <Table>
+                            <Tbody>
+                                <Tr>
+                                    <TdImg> 
+                                        <IconImg className='dataText3'  alt='pump' src={pump}/> 
+                                        <Span className='dataText3' >MPG</Span>
+                                    </TdImg>
+                                     <Td className='dataText3' >19/24</Td>
+                                </Tr>
+                                <Tr>
+                                    <TdImg> 
+                                        <IconImg className='dataText3' alt='hp' src={hp}/> 
+                                        <Span className='dataText3' >HP</Span>
+                                    </TdImg>
+                                    <Td className='dataText3'>443</Td>
+                                </Tr>
+                                <Tr>
+                                    <TdImg> 
+                                        <IconImg className='dataText3'  alt='gauge' src={gauge}/> 
+                                        <Span className='dataText3' >0-60</Span>
+                                    </TdImg>
+                                   <Td className='dataText3' >3.2</Td>
+                                </Tr>
+                            </Tbody>
+                        </Table>
+                    </DataContainer1>
                 </ArrowsContainer>
                 <CarImgDiv>
                     <CarImg1 ref={generatedCarRef} className='car1'alt='generatedCar' src={rover}/>
                     <CarImg2 ref={generatedCarRef} className='car2'alt='generatedCar' src={pLeft}/>
                 </CarImgDiv>
             </ContainerDiv>
-            <TextContainer ref={selectText}>
-                <TitleH2 ref={selectText}>SELECT A VEHICLE FROM YOUR PHONE.</TitleH2>
-                <Summary ref={selectText}>Select from a wide range of luxury vehicles in our inventory.  Drive it for a month, trade it the next for something else you have always wanted to own.</Summary>
+            <TextContainer className= 'selectText' ref={selectText}>
+                <TitleH2 className= 'selectText' ref={selectText}>SELECT A VEHICLE FROM YOUR PHONE.</TitleH2>
+                <Summary className= 'selectText' ref={selectText}>Select from a wide range of luxury vehicles in our inventory.  Drive it for a month, trade it the next for something else you have always wanted to own.</Summary>
             </TextContainer>
         </Section2>
     )
