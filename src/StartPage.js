@@ -1,6 +1,6 @@
 // import {render} from 'react-dom';
 import styled from 'styled-components';
-import gsap from "gsap";
+import {gsap} from "gsap";
 import { useRef, useEffect } from 'react'
 import {Section} from './components/styles/Section.styled'
 import carleft from './assets/car-white-1.0ce8111a (1).png'
@@ -17,7 +17,7 @@ export default function StartPage() {
         gsap.to('.cars', {duration: .55, x:0, delay: .35})
         gsap.to('.appDiv1', {duration: .65, x: 0, delay: .65, opacity: 1, ease: "sine.out"})
         gsap.from('.text', {duration: .55, y: -100, delay: .65, stagger: 0.10, opacity: 0})
-      });
+      },[]);
     
     const ElDiv = styled.div`
         display: flex;

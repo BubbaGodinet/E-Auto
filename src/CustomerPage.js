@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useEffect} from "react"
 import {Section2} from './components/styles/Section2.styled'
 import alex from './assets/guy.1b56a7ff.png'
@@ -9,6 +9,7 @@ import logo from './assets/logo-black.a224c461.svg'
 import arrow from './assets/arrow-right.a3256c0c.svg'
 
 gsap.registerPlugin(ScrollTrigger);
+const plugins = [ ScrollTrigger ]
 export default function CustomerPage() {
 
     const CustomerDiv = styled.div`

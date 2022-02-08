@@ -1,12 +1,14 @@
 import styled from 'styled-components';
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useEffect} from 'react'
 import {Section2} from './components/styles/Section2.styled'
 import porsche from './assets/porche-front.acc2162e.png'
 import app from './assets/app-3.c8673836.png'
 
 gsap.registerPlugin(ScrollTrigger);
+
+const plugins = [ ScrollTrigger ]
 export default function SwitchCarsPage() {
 
     const CarDiv = styled.div`

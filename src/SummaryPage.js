@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useEffect} from "react"
 import {SummarySection} from './components/styles/SummarySection.styled'
 import coin from './assets/coin.39ba494c.svg'
@@ -8,6 +8,7 @@ import doc from './assets/document.31e848e2.svg'
 import wrench from './assets/wrench.0772f3e4.svg'
 
 gsap.registerPlugin(ScrollTrigger);
+const plugins = [ ScrollTrigger ]
 export default function SummaryPage() {
 
     const OuterDiv = styled.div`
