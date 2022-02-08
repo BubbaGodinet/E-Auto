@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import {useEffect} from "react"
 import {Section2} from './components/styles/Section2.styled'
 import alex from './assets/guy.1b56a7ff.png'
@@ -204,7 +204,6 @@ export default function CustomerPage() {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        const plugins = [ ScrollTrigger ]
         gsap.to('.backgroundDiv', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .45, opacity: 1, x:0});
         gsap.to('.guyImg', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:0, opacity: 1, delay: .40})
         gsap.fromTo('.carImg', {x: '-100%', y: '50%'}, {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:'50%', opacity: 1, delay: .40})

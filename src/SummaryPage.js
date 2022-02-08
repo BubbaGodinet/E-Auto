@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import {useEffect} from "react"
 import {SummarySection} from './components/styles/SummarySection.styled'
 import coin from './assets/coin.39ba494c.svg'

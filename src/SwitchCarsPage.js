@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import {useEffect} from 'react'
 import {Section2} from './components/styles/Section2.styled'
 import porsche from './assets/porche-front.acc2162e.png'
