@@ -8,56 +8,59 @@ import car from './assets/car-white-2.ec706134.png'
 import logo from './assets/logo-black.a224c461.svg'
 import arrow from './assets/arrow-right.a3256c0c.svg'
 
-
+gsap.registerPlugin(ScrollTrigger);
 export default function CustomerPage() {
 
     const CustomerDiv = styled.div`
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    align-items: flex-end;
-    position: relative;
-    height: 80vh;
-    width: 40vw;
-    @media screen and (max-width: 1000px) {
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        align-items: flex-end;
         position: relative;
-        height: unset;
-        width: 120%;
-        left: -10%;
-        margin-top: 2vh;
-    }
+        height: 80vh;
+        width: 40vw;
+
+        @media screen and (max-width: 1000px) {
+            position: relative;
+            height: unset;
+            width: 120%;
+            left: -10%;
+            margin-top: 2vh;
+         }
     `
     const CustomerInnerDiv = styled.div`
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
     `
     const BackgroundDiv  = styled.div`
-    transform: translateX(-100%);
-    width: 100%;
-    height: 100%;
-    background-color:  rgb(251, 200, 67);
+        transform: translateX(-100%);
+        width: 100%;
+        height: 100%;
+        background-color:  rgb(251, 200, 67);
     `
     const GuyImg = styled.img`
         transform: translateX(-100%);
         opacity: 0;
         width: 70%;
+
         @media only screen and (max-width: 1000px) {
             margin-top: 20%;
         }
     `
     const CarImg = styled.img`
-    opacity: 0;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    width: 57vw;
-    @media screen and (max-width: 1000px) {
-        display: none;
-    }
+        opacity: 0;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 57vw;
+
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
     `
     const ReviewDiv = styled.div`
     transform: translateY(0%);
@@ -200,10 +203,10 @@ export default function CustomerPage() {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to('.backgroundDiv', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .45, opacity: 1, x:0}, 'Start');
+        gsap.to('.backgroundDiv', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .45, opacity: 1, x:0});
         gsap.to('.guyImg', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:0, opacity: 1, delay: .40})
         gsap.fromTo('.carImg', {x: '-100%', y: '50%'}, {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:'50%', opacity: 1, delay: .40})
-        gsap.from('.reviewDiv', {scrollTrigger: {trigger: '.reviewDiv', start: 'top center'}, duration: .55, y: -300, opacity: 0, delay: .70}, 'Start')
+        gsap.from('.reviewDiv', {scrollTrigger: {trigger: '.reviewDiv', start: 'top center'}, duration: .55, y: -300, opacity: 0, delay: .70},)
         },[])
   
     return(

@@ -6,11 +6,10 @@ import map from './assets/map.3f0298de.png'
 import car from './assets/porsche-right.981532db.png'
 import app from './assets/app-2.35887031.png'
 
-
+gsap.registerPlugin(ScrollTrigger);
 export default function DoorDeliveryPage() {
 
     
-
     const DoorSection = styled.section`
     transform: translateX(0%);
     padding: 6vw 5% 0px;
@@ -138,11 +137,10 @@ export default function DoorDeliveryPage() {
 
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from('.mapDiv', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%', markers:true}, duration: .4, x: 2000, opacity: 1}, 'Start')
-        gsap.from('.deliverText', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, y: -300, opacity: 0, stagger: .20}, 'Start')
-        gsap.from('.appDiv', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, duration: .55, y: -300, opacity: 0}, 'Start')
-        gsap.from('.deliverCar', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, duration: .75, x:-800, opacity: 0}, 'Start')
+        gsap.from('.mapDiv', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%', markers:true}, duration: .4, x: 2000, opacity: 1})
+        gsap.from('.deliverText', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, y: -300, opacity: 0, stagger: .20})
+        gsap.from('.appDiv', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, duration: .55, y: -300, opacity: 0})
+        gsap.from('.deliverCar', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, duration: .75, x:-800, opacity: 0})
     })
 
     return(
