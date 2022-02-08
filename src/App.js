@@ -1,4 +1,3 @@
-// import { Routes, Route, Link } from "react-router-dom";
 import CustomerPage from './CustomerPage'
 import DoorDeliveryPage from './DoorDeliveryPage'
 import SelectVehiclePage from './SelectVehiclePage'
@@ -10,12 +9,12 @@ import {Main} from './components/styles/Main.styled'
 function App() {
   return (
     <Main>
-    <StartPage/>
-    <SelectVehiclePage/>
-    <DoorDeliveryPage/>
-    <SwitchCarsPage/>
-    <SummaryPage/>
-    <CustomerPage/>
+      <StartPage/>
+      <SelectVehiclePage/>
+      <DoorDeliveryPage/>
+      <SwitchCarsPage/>
+      <SummaryPage/>
+      <CustomerPage/>
     </Main>
   );
 }
