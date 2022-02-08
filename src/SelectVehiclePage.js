@@ -11,7 +11,6 @@ import gauge from './assets/gauge-icon.995b6546.svg'
 import rover from './assets/rover-left.6589716b.png'
 import pLeft from './assets/porsche-left.5d241960.png'
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function SelectVehiclePage() {
     
@@ -289,6 +288,7 @@ export default function SelectVehiclePage() {
     // const tl = gsap.timeline();
     
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         gsap.fromTo(backgroundRef.current, {x:'100%'},{scrollTrigger: {trigger: backgroundRef.current, start: 'top center'}, duration: .85, x:'0%'}, 'Start')
         gsap.from('.selectText', {scrollTrigger: {trigger: '.selectText', start: 'top center'}, duration: .55, y: -300, opacity: 0, stagger: .20}, 'Start')
         gsap.to('.dataText', {scrollTrigger: {trigger: '.dataText', start: 'top center'}, delay: .4, opacity: 1}, 'Start');

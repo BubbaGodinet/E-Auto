@@ -7,7 +7,6 @@ import coin from './assets/coin.39ba494c.svg'
 import doc from './assets/document.31e848e2.svg'
 import wrench from './assets/wrench.0772f3e4.svg'
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function SummaryPage() {
 
@@ -85,6 +84,7 @@ export default function SummaryPage() {
     `
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         gsap.to('.innerDiv', {scrollTrigger: {trigger: '.innerDiv', start: 'top center'}, duration: .75, y: 70, opacity:1, stagger: .30}, 'Start');
         },[])
         

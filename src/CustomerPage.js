@@ -8,7 +8,6 @@ import car from './assets/car-white-2.ec706134.png'
 import logo from './assets/logo-black.a224c461.svg'
 import arrow from './assets/arrow-right.a3256c0c.svg'
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function CustomerPage() {
 
@@ -200,6 +199,7 @@ export default function CustomerPage() {
     `
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         gsap.to('.backgroundDiv', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .45, opacity: 1, x:0}, 'Start');
         gsap.to('.guyImg', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:0, opacity: 1, delay: .40})
         gsap.fromTo('.carImg', {x: '-100%', y: '50%'}, {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:'50%', opacity: 1, delay: .40})
