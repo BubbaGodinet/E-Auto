@@ -11,8 +11,8 @@ import gauge from './assets/gauge-icon.995b6546.svg'
 import rover from './assets/rover-left.6589716b.png'
 import pLeft from './assets/porsche-left.5d241960.png'
 
-gsap.registerPlugin(ScrollTrigger);
-const plugins = [ ScrollTrigger ]
+// gsap.registerPlugin(ScrollTrigger);
+// const plugins = [ ScrollTrigger ]
 export default function SelectVehiclePage() {
     
     

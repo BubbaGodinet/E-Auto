@@ -6,9 +6,9 @@ import {Section2} from './components/styles/Section2.styled'
 import porsche from './assets/porche-front.acc2162e.png'
 import app from './assets/app-3.c8673836.png'
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const plugins = [ ScrollTrigger ]
+// const plugins = [ ScrollTrigger ]
 export default function SwitchCarsPage() {
 
     const CarDiv = styled.div`

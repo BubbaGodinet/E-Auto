@@ -6,9 +6,9 @@ import map from './assets/map.3f0298de.png'
 import car from './assets/porsche-right.981532db.png'
 import app from './assets/app-2.35887031.png'
 
-const plugins = [ ScrollTrigger ]
+// const plugins = [ ScrollTrigger ]
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 export default function DoorDeliveryPage() {
 
     
