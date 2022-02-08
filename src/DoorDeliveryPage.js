@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { gsap } from "gsap";
 import {useEffect} from 'react'
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import map from './assets/map.3f0298de.png'
 import car from './assets/porsche-right.981532db.png'
 import app from './assets/app-2.35887031.png'

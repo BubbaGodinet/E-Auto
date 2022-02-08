@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { gsap } from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import {useEffect} from "react"
 import {Section2} from './components/styles/Section2.styled'
 import alex from './assets/guy.1b56a7ff.png'

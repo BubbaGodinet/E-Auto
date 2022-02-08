@@ -1,6 +1,6 @@
 // import {render} from 'react-dom';
 import styled from 'styled-components';
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { useRef, useEffect } from 'react'
 import {Section} from './components/styles/Section.styled'
 import carleft from './assets/car-white-1.0ce8111a (1).png'

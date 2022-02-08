@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {useEffect, useState, useRef} from 'react'
-import { gsap } from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import {Section2} from './components/styles/Section2.styled'
 import arrowleft from './assets/arrow-left.4538fc59.svg'
 import arrowright from './assets/arrow-right.a3256c0c (1).svg'
