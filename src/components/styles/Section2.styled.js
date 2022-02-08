@@ -6,4 +6,11 @@ padding: 6vw 5% 0px;
 background-color: white;
 height: 100vh;
 display: flex;
+@media screen and (max-width: 1000px) {
+    height: unset;
+    flex-direction: column-reverse;
+    margin-bottom: 10vw;
+    z-index: 0;
+}
+} 
 `

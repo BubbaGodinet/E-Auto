@@ -20,7 +20,6 @@ export default function StartPage() {
         gsap.from('.text', {duration: .55, y: -100, delay: .65, stagger: 0.10, opacity: 0})
       });
     
-
     const ElDiv = styled.div`
     display: flex;
     height: 100px;
@@ -35,6 +34,9 @@ export default function StartPage() {
     const CompanyLogo1 = styled.img`
     height: 100%;
     margin-left: 5px;
+    @media screen and (max-width: 1000px) {
+        height: 3.882vw;
+    }
     `
     const Title = styled.h1`
     font-size: 6vw;
@@ -48,20 +50,27 @@ export default function StartPage() {
     margin: 0px;
     width: 65vw;
     @media screen and (max-width: 1000px) {
-        font-size: 6vw;
-        line-height: 8vw;
+        font-size: 9vw;
+        line-height: 10vw;
+        width: 90vw;
     }
   `
     const DownloadDiv = styled.div`
     transform: translateY(100%);
     opacity: 1;
     display: block;
+     @media screen and (max-width: 1000px) {
+        margin: 0%;
+        margin-bottom: 10vw;
+    }
     `
     const TitleDiv = styled.div`
     transform: translateY(0%);
     opacity: 1;
     padding: 50px 0px;
-    display: block;
+    @media screen and (max-width: 1000px) {
+        padding: 40px 0px 20vw;
+    }
     `
     const AppDiv = styled.div`
     position: absolute;
@@ -78,16 +87,29 @@ export default function StartPage() {
     }
     `
     const CarOuterDiv = styled.div`
-    display: block;
+    @media screen and (max-width: 1000px) {
+        overflow: hidden;
+        width: 100%;
+        height: 40vh;
+        position: absolute;
+        z-index: 10;
+        left: 0px;
+        bottom: -5vh;
+    }
     `
     const CarInnerDiv = styled.div`
     position: absolute;
+    z-index: -1;
     bottom: 0px;
     left: 0px;
     width: 100%;
     height: 200px;
     background-color: rgb(255, 255, 255);
-    display: block;
+    @media screen and (max-width: 1000px) {
+       display: none;
+       position: absolute;
+        z-index: 10;
+    }
     `
     const CarLeft = styled.img`
     transform: translateX(-100%);
@@ -98,9 +120,10 @@ export default function StartPage() {
     @media screen and (max-width: 1000px) {
         width: 55vw;
         bottom: 2vh;
+        left: -5.5%;
     }
     `
-
+    
     const CarRight= styled.img`
     transform: translateX(-100%);
     width: 43.8vw;
@@ -113,7 +136,6 @@ export default function StartPage() {
         left: 52%;
     }
     `
-
     const CarMiddle = styled.img`
     transform: translateX(-100%);
     position: absolute;
@@ -121,8 +143,10 @@ export default function StartPage() {
     bottom: 110px;
     left: 6%;
     @media screen and (max-width: 1000px) {
+        position: absolute;
+        z-index: 1000;
         width: 68vw;
-        bottom: 0vh;
+        bottom: -.5vh;
         left: 13%;
     }
     `
@@ -153,10 +177,10 @@ return(
       </TitleDiv>
       <CarOuterDiv>
           <CarInnerDiv >
+          </CarInnerDiv>
       <CarLeft className='cars' alt='carleft' src={carleft} />
       <CarRight className='cars' alt='carright' src={carright} />
       <CarMiddle className='cars' alt='carmiddle' src={carmiddle} />
-          </CarInnerDiv>
       </CarOuterDiv>
       <AppDiv className='appDiv1'>
         <AppImg ref={appRef} src={currentVehicle}/>

@@ -20,6 +20,13 @@ export default function CustomerPage() {
     position: relative;
     height: 80vh;
     width: 40vw;
+    @media screen and (max-width: 1000px) {
+        position: relative;
+        height: unset;
+        width: 120%;
+        left: -10%;
+        margin-top: 2vh;
+    }
     `
     const CustomerInnerDiv = styled.div`
     position: absolute;
@@ -39,6 +46,9 @@ export default function CustomerPage() {
         transform: translateX(-100%);
         opacity: 0;
         width: 70%;
+        @media only screen and (max-width: 1000px) {
+            margin-top: 20%;
+        }
     `
     const CarImg = styled.img`
     opacity: 0;
@@ -46,6 +56,9 @@ export default function CustomerPage() {
     bottom: 0px;
     right: 0px;
     width: 57vw;
+    @media screen and (max-width: 1000px) {
+        display: none;
+    }
     `
     const ReviewDiv = styled.div`
     transform: translateY(0%);
@@ -54,6 +67,10 @@ export default function CustomerPage() {
     margin-left: 6vw;
     margin-top: 10vh;
     display: block;
+    @media screen and (max-width: 1000px) {
+        flex: unset;
+        margin-left: 0px;
+    }
 
     h2 { 
         color: rgb(43, 49, 68);
@@ -63,7 +80,13 @@ export default function CustomerPage() {
         margin: 0px;
         white-space: pre-line;
         letter-spacing: 0vw;
+    @media screen and (max-width: 1000px) {
+        font-size: 6vw;
+        line-height: 7vw;
+        white-space: unset;
+        letter-spacing: -0.3vw;
     }
+}
 
     p.review {
         color: rgb(0, 0, 0);
@@ -74,6 +97,13 @@ export default function CustomerPage() {
         white-space: pre-line;
         margin-top: 2vw;
         width: 55%;
+        @media only screen and (max-width: 1000px) {
+            margin-top: 4vw;
+            font-size: 3.5vw;
+            line-height: 6vw;
+            white-space: unset;
+            width: 100%;
+        }
     }
 
     p.reviewer {
@@ -82,6 +112,11 @@ export default function CustomerPage() {
         font-weight: 600;
         letter-spacing: 0.02vw;
         line-height: 1.6vw;
+        @media screen and (max-width: 1000px) {
+            font-size: 3vw;
+            letter-spacing: 0.02vw;
+            line-height: 3vw;
+        }
     }
 
     div.spacer {
@@ -89,6 +124,10 @@ export default function CustomerPage() {
          height: 0.25vw;
          width: 100%;
          margin: 4.4vh 0px;
+         @media screen and (max-width: 1000px) {
+            height: 1vw;
+            margin: 4.4vh 0px 1vh;
+         }
     }
     `
     const FooterDiv = styled.div`
@@ -107,6 +146,9 @@ export default function CustomerPage() {
     flex: 1 1 100%;
     margin: 6.25vw 0px 1.875vw;
     display: block;
+    @media screen and (max-width: 1000px) {
+        margin: 10vw 0px 3vw;
+    }
     `
     const FAQDiv = styled.div`
     flex: 1 1 0%;
@@ -115,6 +157,9 @@ export default function CustomerPage() {
     align-items: center;
     -webkit-box-pack: end;
     justify-content: flex-end;
+    @media screen and (max-width: 1000px) {
+        padding: 1vw 0px 6vw;
+    }
 
     a.logo { 
         padding: 0px;
@@ -123,12 +168,14 @@ export default function CustomerPage() {
         font-weight: 600;
         letter-spacing: -0.02vw;
         text-decoration: none;  
-
         cursor: pointer;
     }
 
     img { 
         height: 1.2vw;
+        @media screen and (max-width: 1000px) {
+            height: 4vw;
+        }
     }
 
     a.faq {
@@ -138,6 +185,9 @@ export default function CustomerPage() {
         font-weight: 600;
         letter-spacing: -0.02vw;
         text-decoration: none;
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
     }
     
     div {
@@ -150,10 +200,10 @@ export default function CustomerPage() {
     `
 
     useEffect(() => {
-        gsap.to('.backgroundDiv', {scrollTrigger: '.backgroundDiv', duration: .45, opacity: 1, x:0}, 'Start');
-        gsap.to('.guyImg', {duration: .35, x:0, opacity: 1, delay: .40})
-        gsap.fromTo('.carImg', {x: -100}, {duration: .35, x:730, y:190, opacity: 1, delay: .40})
-        gsap.from('.reviewDiv', {scrollTrigger: '.reviewDiv', duration: .55, y: -300, opacity: 0, delay: .70}, 'Start')
+        gsap.to('.backgroundDiv', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .45, opacity: 1, x:0}, 'Start');
+        gsap.to('.guyImg', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:0, opacity: 1, delay: .40})
+        gsap.fromTo('.carImg', {x: '-100%', y: '50%'}, {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:'50%', opacity: 1, delay: .40})
+        gsap.from('.reviewDiv', {scrollTrigger: {trigger: '.reviewDiv', start: 'top center'}, duration: .55, y: -300, opacity: 0, delay: .70}, 'Start')
         },[])
   
     return(

@@ -8,6 +8,7 @@ height: 100vh;
 @media screen and (max-width: 1000px) {
     padding: 10vh 5% 0px;
     position: relative;
+    z-index: 10;
     height: unset;
     display: flex;
     flex-direction: column;

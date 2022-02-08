@@ -85,7 +85,7 @@ export default function SummaryPage() {
     `
 
     useEffect(() => {
-        gsap.to('.innerDiv', {scrollTrigger: '.innerDiv', duration: .75, y: 70, opacity:1, stagger: .30}, 'Start');
+        gsap.to('.innerDiv', {scrollTrigger: {trigger: '.innerDiv', start: 'top center'}, duration: .75, y: 70, opacity:1, stagger: .30}, 'Start');
         },[])
         
     return(

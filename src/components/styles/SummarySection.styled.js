@@ -8,7 +8,7 @@ height: 70vh;
 overflow: hidden;
 @media screen and (max-width: 1000px) {
     flex-direction: column;
-    padding: 16vh 5% 0px;
+    padding: 2vh 5% 0px;
     height: unset;
 }
 `
