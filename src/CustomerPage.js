@@ -11,7 +11,7 @@ import arrow from './assets/arrow-right.a3256c0c.svg'
 gsap.registerPlugin(ScrollTrigger);
 const plugins = [ ScrollTrigger ]
 export default function CustomerPage() {
-
+    const plugins = [ ScrollTrigger ]
     const CustomerDiv = styled.div`
         display: flex;
         -webkit-box-pack: center;
@@ -204,6 +204,7 @@ export default function CustomerPage() {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
+        const plugins = [ ScrollTrigger ]
         gsap.to('.backgroundDiv', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .45, opacity: 1, x:0});
         gsap.to('.guyImg', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:0, opacity: 1, delay: .40})
         gsap.fromTo('.carImg', {x: '-100%', y: '50%'}, {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:'50%', opacity: 1, delay: .40})
