@@ -77,6 +77,7 @@ export default function SummaryPage() {
         line-height: 1.5;
         margin: 0px;
         width: 18vw;
+        padding-left: 2vw;
 
         @media screen and (max-width: 1000px) {
             flex-direction: column;
