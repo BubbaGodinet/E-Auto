@@ -6,38 +6,38 @@ import map from './assets/map.3f0298de.png'
 import car from './assets/porsche-right.981532db.png'
 import app from './assets/app-2.35887031.png'
 
-// const plugins = [ ScrollTrigger ]
-
-// gsap.registerPlugin(ScrollTrigger);
 export default function DoorDeliveryPage() {
 
     
     const DoorSection = styled.section`
-    transform: translateX(0%);
-    padding: 6vw 5% 0px;
-    background-color: white;
-    height: 100vh;
-    display: flex;
-    @media screen and (max-width: 1000px) {
-        height: unset;
-        margin-top: 6vw;
-        flex-direction: column;
-    }
+        transform: translateX(0%);
+        padding: 6vw 5% 0px;
+        background-color: white;
+        height: 100vh;
+        display: flex;
+
+        @media screen and (max-width: 1000px) {
+            height: unset;
+            margin-top: 6vw;
+            flex-direction: column;
+        }
     `
 
     const TextDiv = styled.div`
-    flex: 1 1 0%;
-    margin-top: 10%;
-    display: block;
-    opacity: 1;
-    @media screen and (max-width: 1000px) {
-        margin-top: 30%;
-    }
+        flex: 1 1 0%;
+        margin-top: 10%;
+        display: block;
+        opacity: 1;
+
+        @media screen and (max-width: 1000px) {
+            margin-top: 30%;
+        }
     `
     const ContainerDiv = styled.div`
         position: relative;
         flex: 1.5 1 0%;
         height: 34.9vw;
+
         @media screen and (max-width: 1000px) {
             overflow: hidden;
             width: 110%;
@@ -51,6 +51,7 @@ export default function DoorDeliveryPage() {
         width: 50vw;
         margin-top: 8%;
         overflow: hidden;
+
         @media only screen and (max-width: 1000px) {
             left: 50%;
             top: 50%;
@@ -69,11 +70,13 @@ export default function DoorDeliveryPage() {
         font-size: 0px;
         border-radius: 35px;
         filter: drop-shadow(rgba(0, 0, 0, 0.4) -20px 20px 25px);
+
         @media screen and (max-width: 1000px) {
             left: 17%;
             top: 10%;
             width: 30vh;
         }
+
         @media (min-width: 800px) and (max-width: 1200px) {
             left: 30%;
             top: 10%;
@@ -90,32 +93,34 @@ export default function DoorDeliveryPage() {
         width: 31vw;
         bottom: 0px;
         left: 0px;
+
         @media only screen and (max-width: 1000px) {
             display: none;
         }
     `
     const AppImg = styled.img`
-    width: 100%;
+        width: 100%;
     `
 
     const H2 = styled.h2`
-    transform: translateY(0%);
-    opacity: 1;
-    color: rgb(43, 49, 68);
-    font-size: 4vw;
-    font-weight: bold;
-    line-height: 4.5vw;
-    margin: 0px;
-    white-space: pre-line;
-    font-family: Bebas Neue,sans-serif;
-    text-transform: uppercase;
-    @media screen and (max-width: 1000px) {
-        font-size: 6.5vw;
-        line-height: 8vw;
-        white-space: unset;
-        letter-spacing: -0.3vw;
-        width: 92vw;
-    }
+        transform: translateY(0%);
+        opacity: 1;
+        color: rgb(43, 49, 68);
+        font-size: 4vw;
+        font-weight: bold;
+        line-height: 4.5vw;
+        margin: 0px;
+        white-space: pre-line;
+        font-family: Bebas Neue,sans-serif;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 6.5vw;
+            line-height: 8vw;
+            white-space: unset;
+            letter-spacing: -0.3vw;
+            width: 92vw;
+        }
     `
     const P = styled.p`
         transform: translateY(0%);
@@ -128,21 +133,28 @@ export default function DoorDeliveryPage() {
         white-space: pre-line;
         margin-top: 2vw;
         width: 70%;
+
         @media screen and (max-width: 1000px) {
             margin-top: 4vw;
-        font-size: 3.5vw;
-        line-height: 6vw;
-        white-space: unset;
-        width: 100%;
+            font-size: 3.5vw;
+            line-height: 6vw;
+            white-space: unset;
+            width: 100%;
         }
     `
    
     
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        let tl = gsap.timeline({scrollTrigger: {trigger:'.mapDiv', start: 'top 40%', markers:true}});
+        let tl = gsap.timeline({
+            scrollTrigger: {
+               trigger:'.mapDiv', 
+               start: 'top 60%', 
+               markers:true
+            }
+        });
 
-        tl.from('.mapDiv', { duration: .45, x: 2000, opacity: 1}, 'Start')
+        tl.from('.mapDiv', { duration: .45, x: 2000, opacity: 1})
           .from('.deliverText', {y: -300, opacity: 0, stagger: .20}, ">")
           .from('.appDiv', {duration: .45, y: -300, opacity: 0}, "<")
           .from('.deliverCar', {duration: .45, x:-800, opacity: 0}, "<")
@@ -153,7 +165,8 @@ export default function DoorDeliveryPage() {
         <DoorSection>
             <TextDiv className='deliverText' >
                  <H2 className='deliverText'>DELIVERED TO YOUR DOOR.</H2>
-                 <P className='deliverText'>Eleanor works with your schedule to have a <br/> white-glove delivery service deliver your new <br/> vehicle right to your door.</P>
+                 <P className='deliverText'>Eleanor works with your schedule to have a <br/> white-glove delivery service deliver 
+                 your new <br/> vehicle right to your door.</P>
             </TextDiv>
             <ContainerDiv className="container">
                 <MapDiv className="mapDiv">

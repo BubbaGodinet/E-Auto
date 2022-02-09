@@ -8,10 +8,8 @@ import car from './assets/car-white-2.ec706134.png'
 import logo from './assets/logo-black.a224c461.svg'
 import arrow from './assets/arrow-right.a3256c0c.svg'
 
-// gsap.registerPlugin(ScrollTrigger);
-// const plugins = [ ScrollTrigger ]
 export default function CustomerPage() {
-    const plugins = [ ScrollTrigger ]
+    
     const CustomerDiv = styled.div`
         display: flex;
         -webkit-box-pack: center;
@@ -64,18 +62,31 @@ export default function CustomerPage() {
         }
     `
     const ReviewDiv = styled.div`
-    transform: translateY(0%);
-    opacity: 1;
-    flex: 1 1 0%;
-    margin-left: 6vw;
-    margin-top: 10vh;
-    display: block;
-    @media screen and (max-width: 1000px) {
-        flex: unset;
-        margin-left: 0px;
-    }
+        transform: translateY(0%);
+        opacity: 1;
+        flex: 1 1 0%;
+        margin-left: 6vw;
+        margin-top: 10vh;
+        display: block;
 
-    h2 { 
+        @media screen and (max-width: 1000px) {
+            flex: unset;
+            margin-left: 0px;
+        }
+
+    `
+    const TextSpacerDiv = styled.div`
+        background: rgb(244, 244, 245);
+        height: 0.25vw;
+        width: 100%;
+        margin: 4.4vh 0px;
+
+        @media screen and (max-width: 1000px) {
+            height: 1vw;
+            margin: 4.4vh 0px 1vh;
+        }
+    `
+    const ReviewH2 = styled.h2`
         color: rgb(43, 49, 68);
         font-size: 3.5vw;
         font-weight: bold;
@@ -83,15 +94,15 @@ export default function CustomerPage() {
         margin: 0px;
         white-space: pre-line;
         letter-spacing: 0vw;
-    @media screen and (max-width: 1000px) {
-        font-size: 6vw;
-        line-height: 7vw;
-        white-space: unset;
-        letter-spacing: -0.3vw;
-    }
-}
 
-    p.review {
+        @media screen and (max-width: 1000px) {
+            font-size: 6vw;
+            line-height: 7vw;
+            white-space: unset;
+            letter-spacing: -0.3vw;
+        }
+    `
+    const ReviewP = styled.p`
         color: rgb(0, 0, 0);
         font-size: 1vw;
         font-weight: normal;
@@ -107,109 +118,103 @@ export default function CustomerPage() {
             white-space: unset;
             width: 100%;
         }
-    }
-
-    p.reviewer {
+    `
+    const ReviewerP = styled.p`
         color: rgb(0, 0, 0);
         font-size: 0.75vw;
         font-weight: 600;
         letter-spacing: 0.02vw;
         line-height: 1.6vw;
+
         @media screen and (max-width: 1000px) {
             font-size: 3vw;
             letter-spacing: 0.02vw;
             line-height: 3vw;
         }
-    }
-
-    div.spacer {
-         background: rgb(244, 244, 245);
-         height: 0.25vw;
-         width: 100%;
-         margin: 4.4vh 0px;
-         @media screen and (max-width: 1000px) {
-            height: 1vw;
-            margin: 4.4vh 0px 1vh;
-         }
-    }
     `
     const FooterDiv = styled.div`
-    display: flex;
-    width: 100%;
-    -webkit-box-pack: center;
-    justify-content: center;
-    padding: 0px 5% 6.25vw;
-    flex-wrap: wrap;
-    
+        display: flex;
+        width: 100%;
+        -webkit-box-pack: center;
+        justify-content: center;
+        padding: 0px 5% 6.25vw;
+        flex-wrap: wrap;
     `
     const SpaceDiv = styled.div`
-    background: rgb(244, 244, 245);
-    height: 1px;
-    width: 100%;
-    flex: 1 1 100%;
-    margin: 6.25vw 0px 1.875vw;
-    display: block;
-    @media screen and (max-width: 1000px) {
-        margin: 10vw 0px 3vw;
-    }
+        background: rgb(244, 244, 245);
+        height: 1px;
+        width: 100%;
+        flex: 1 1 100%;
+        margin: 6.25vw 0px 1.875vw;
+        
+        @media screen and (max-width: 1000px) {
+            margin: 10vw 0px 3vw;
+        }
     `
     const FAQDiv = styled.div`
-    flex: 1 1 0%;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-    @media screen and (max-width: 1000px) {
-        padding: 1vw 0px 6vw;
-    }
-
-    a.logo { 
-        padding: 0px;
-        color: rgb(65, 74, 105);
-        font-size: 1.2vw;
-        font-weight: 600;
-        letter-spacing: -0.02vw;
-        text-decoration: none;  
-        cursor: pointer;
-    }
-
-    img { 
-        height: 1.2vw;
-        @media screen and (max-width: 1000px) {
-            height: 4vw;
-        }
-    }
-
-    a.faq {
-        padding: 10px 20px;
-        color: rgb(65, 74, 105);
-        font-size: 1 vw;
-        font-weight: 600;
-        letter-spacing: -0.02vw;
-        text-decoration: none;
-        @media screen and (max-width: 1000px) {
-            display: none;
-        }
-    }
-    
-    div {
         flex: 1 1 0%;
-    }
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+
+        @media screen and (max-width: 1000px) {
+            padding: 1vw 0px 6vw;
+        }
+
+        a.logo { 
+            padding: 0px;
+            color: rgb(65, 74, 105);
+            font-size: 1.2vw;
+            font-weight: 600;
+            letter-spacing: -0.02vw;
+            text-decoration: none;  
+            cursor: pointer;
+        }
+
+        img { 
+            height: 1.2vw;
+
+            @media screen and (max-width: 1000px) {
+                height: 4vw;
+            }
+        }
+
+        a.faq {
+            padding: 10px 20px;
+            color: rgb(65, 74, 105);
+            font-size: 1 vw;
+            font-weight: 600;
+            letter-spacing: -0.02vw;
+            text-decoration: none;
+            
+            @media screen and (max-width: 1000px) {
+                display: none;
+            }
+        }
+    `
+    const FAQSpacerDiv = styled.div`
+        flex: 1 1 0%;
     `
     const DownloadDiv = styled.div`
     transform: translateY(0%);
     opacity: 1;
     `
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        let tl = gsap.timeline({scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}});
+        let tl = gsap.timeline({scrollTrigger: {
+            trigger:'.backgroundDiv', 
+            start: 'top center'
+        }
+    });
 
         tl.to('.backgroundDiv', {duration: .45, opacity: 1, x:0})
           .to('.guyImg', {duration: .35,x:0, opacity: 1})
           .fromTo('.carImg', {x: '-100%', y: '50%'}, {duration: .25,x:'50%', opacity: 1}, "<")
           .from('.reviewDiv', {duration: .55, y: -300, opacity: 0}, ">")
-          
+
         },[])
   
     return(
@@ -224,12 +229,15 @@ export default function CustomerPage() {
                 <CarImg alt='guy' className='carImg' src={car}/>
             </CustomerDiv>
             <ReviewDiv className="reviewDiv">
-                <h2>CUSTOMERS WITH <br/> THAT NEW CAR SMELL</h2>
-                <p className='review'>“With Eleanor I was able to drive 2 of my dream cars this year!  The process is always easy and affordable!”</p>
-                <p className='reviewer'>Alex Bateman, Interface Designer</p>
-                <div className='spacer'/>
+                <ReviewH2>CUSTOMERS WITH <br/> THAT NEW CAR SMELL</ReviewH2>
+                <ReviewP className='review'>“With Eleanor I was able to drive 2 of my dream cars this year!  
+                The process is always easy and affordable!”</ReviewP>
+                <ReviewerP className='reviewer'>Alex Bateman, Interface Designer</ReviewerP>
+                <TextSpacerDiv className='spacer'/>
                 <DownloadDiv>
-                    <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} href="https://testflight.apple.com/join/dfAnfpPZ">Available On The App Today <img src={arrow}/></a>
+                    <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', 
+                               lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} 
+                    href="https://testflight.apple.com/join/dfAnfpPZ">Available On The App Today <img src={arrow}/></a>
                  </DownloadDiv>
             </ReviewDiv>
         </Section2>
@@ -237,7 +245,7 @@ export default function CustomerPage() {
             <SpaceDiv/>
             <FAQDiv>
                <a className='logo' href='https://www.eleanorauto.com/'><img alt='logo' src={logo}/></a>
-               <div/>
+               <FAQSpacerDiv/>
                <a className='faq' href=''>About Us</a>
                <a className='faq' href=''>Terms of Use</a>
                <a className='faq' href=''>FAQ</a>

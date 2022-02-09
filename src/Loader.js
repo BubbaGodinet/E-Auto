@@ -35,12 +35,12 @@ export default function Loader() {
     `
     const Circle = styled.img`
         position: absolute;
-        height: 13.2%;
+        height: 13.1%;
     `
     const Dot = styled.img`
         position: absolute;
         height: 1%;
-        right: 59.5vw;
+        right: 59.3vw;
         top: 43%;
         `
         

@@ -7,8 +7,6 @@ import coin from './assets/coin.39ba494c.svg'
 import doc from './assets/document.31e848e2.svg'
 import wrench from './assets/wrench.0772f3e4.svg'
 
-// gsap.registerPlugin(ScrollTrigger);
-// const plugins = [ ScrollTrigger ]
 export default function SummaryPage() {
 
     const OuterDiv = styled.div`
@@ -45,51 +43,56 @@ export default function SummaryPage() {
         }
     `
     const InnerTextDiv = styled.div`
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
     `
     const IconImg = styled.img`
-    height: 30%;
+        height: 30%;    
     `
     const H2 = styled.h2`
-    color: rgb(43, 49, 68);
-    font-size: 1.15vw;
-    font-weight: bold;
-    letter-spacing: -0.01vw;
-    line-height: 1;
-    margin: 2vw 0px 1vw;
-    text-align: center;
-    letter-spacing: -1px;
-    flex-direction: column;
-    @media screen and (max-width: 1000px) {
-        flex-direction: column;
-        font-size: 5vw;
+        color: rgb(43, 49, 68);
+        font-size: 1.15vw;
+        font-weight: bold;
         letter-spacing: -0.01vw;
         line-height: 1;
-        margin: 10vw 0px 4vw;
-    }
+        margin: 2vw 0px 1vw;
+        text-align: center;
+        letter-spacing: -1px;
+        flex-direction: column;
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+            font-size: 5vw;
+            letter-spacing: -0.01vw;
+            line-height: 1;
+            margin: 10vw 0px 4vw;
+        }
     `
     const P = styled.p`
-    white-space: pre-line;
-    color: rgb(0, 0, 0);
-    font-size: 0.875vw;
-    font-weight: normal;
-    letter-spacing: -0.03vw;
-    line-height: 1.5;
-    margin: 0px;
-    width: 18vw;
-    @media screen and (max-width: 1000px) {
-        flex-direction: column;
-        font-size: 3vw;
-        letter-spacing: -0.01vw;
-        width: 60vw;
-    }
+        white-space: pre-line;
+        color: rgb(0, 0, 0);
+        font-size: 0.875vw;
+        font-weight: normal;
+        letter-spacing: -0.03vw;
+        line-height: 1.5;
+        margin: 0px;
+        width: 18vw;
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+            font-size: 3vw;
+            letter-spacing: -0.01vw;
+            width: 60vw;
+        }
     `
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to('.innerDiv', {scrollTrigger: {trigger: '.innerDiv', start: 'top center'}, duration: .75, y: 70, opacity:1, stagger: .30})
+        gsap.to('.innerDiv', {scrollTrigger: {
+            trigger: '.innerDiv', 
+            start: 'top center'
+        }, duration: .75, y: 70, opacity:1, stagger: .30})
 
         },[])
         

@@ -12,16 +12,6 @@ import logo1 from './assets/logo-white.bf5c5867.svg'
 
 export default function StartPage() {
     
-    useEffect(() => {
-        let tl = gsap.timeline();
-
-        tl.from('.section',{duration: .65, x:-5000})
-          .to('.cars', {duration: .55, x:0}, "<.4")
-          .to('.appDiv1', {duration: .35, x: 0, opacity: 1, ease: "sine.out"}, "<.4")
-          .from('.text', {duration: .35, y: -100, stagger: 0.10, opacity: 0}, "<")
-          
-      },[]);
-    
     const ElDiv = styled.div`
         display: flex;
         height: 100px;
@@ -70,17 +60,6 @@ export default function StartPage() {
             margin-bottom: 10vw;
         }
     `
-
-    // const DownloadLink = styled.a`
-    //     fontSize: 16px;
-    //     fontWeight: bold;
-    //     letterSpacing: -0.47px;
-    //     lineHeight: 54px;
-    //     textDecoration: none;
-    //     marginLeft: 5px;
-    //     color: #414A69;
-    // `
-    
     const TitleDiv = styled.div`
         transform: translateY(0%);
         opacity: 1;
@@ -106,7 +85,6 @@ export default function StartPage() {
         }
     `
     const CarOuterDiv = styled.div`
-
         @media screen and (max-width: 1000px) {
             overflow: hidden;
             width: 100%;
@@ -183,31 +161,43 @@ export default function StartPage() {
         font-size: 0px;
         border-radius: 35px;
         filter: drop-shadow(rgba(0, 0, 0, 0.4) -20px 20px 25px);
-    `
+    ` 
+    useEffect(() => {
+        let tl = gsap.timeline();
+
+        tl.from('.section',{duration: .65, x:-5000})
+          .to('.cars', {duration: .55, x:0}, "<.4")
+          .to('.appDiv1', {duration: .35, x: 0, opacity: 1, ease: "sine.out"}, "<.3")
+          .from('.text', {duration: .35, y: -100, stagger: 0.10, opacity: 0}, "<")
+
+      },[]);
+
 return(
     <>
       <ElDiv>
-        <a style={{height: '1.875vw', zIndex: '1', boxSizing: 'border-box', }} href='https://www.eleanorauto.com/'><CompanyLogo1 alt='logo1' src={logo1} /></a>
+          <a style={{ height: '1.875vw', zIndex: '1'}} href=''><CompanyLogo1 alt='logo1' src={logo1} /></a>
       </ElDiv>
-    <Section className='section'>
-        <TitleDiv className='text' >
-            <Title>
-                 DRIVE A NEW <br/> CAR EVERY MONTH.
-            </Title>
-            <DownloadDiv className='text'>
-                <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} href="https://testflight.apple.com/join/dfAnfpPZ">Available On The App Today <img src={arrow}/></a>
-            </DownloadDiv>
-         </TitleDiv>
-        <CarOuterDiv>
-                <CarInnerDiv >
-                </CarInnerDiv>
-                <CarLeft className='cars' alt='carleft' src={carleft} />
-                <CarRight className='cars' alt='carright' src={carright} />
-                <CarMiddle className='cars' alt='carmiddle' src={carmiddle} />
-        </CarOuterDiv>
-        <AppDiv className='appDiv1'>
-                <AppImg src={currentVehicle}/>
-        </AppDiv>
+            <Section className='section'>
+                  <TitleDiv className='text' >
+                        <Title>
+                             DRIVE A NEW <br/> CAR EVERY MONTH.
+                        </Title>
+                        <DownloadDiv className='text'>
+                            <a style={{fontSize: '16px', fontWeight: 'bold', letterSpacing: '-0.47px', lineHeight: '54px', 
+                                       textDecoration: 'none', marginLeft: '5px', color: '#414A69'}} 
+                                       href="https://testflight.apple.com/join/dfAnfpPZ">Available On The App Today <img src={arrow}/></a>
+                        </DownloadDiv>
+                  </TitleDiv>
+                  <CarOuterDiv>
+                       <CarInnerDiv >
+                       </CarInnerDiv>
+                       <CarLeft className='cars' alt='carleft' src={carleft} />
+                       <CarRight className='cars' alt='carright' src={carright} />
+                       <CarMiddle className='cars' alt='carmiddle' src={carmiddle} />
+                  </CarOuterDiv>
+                  <AppDiv className='appDiv1'>
+                        <AppImg src={currentVehicle}/>
+                  </AppDiv>
     </Section>
     </>
   );
