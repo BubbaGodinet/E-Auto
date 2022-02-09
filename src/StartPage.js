@@ -13,10 +13,13 @@ import logo1 from './assets/logo-white.bf5c5867.svg'
 export default function StartPage() {
     
     useEffect(() => {
-        gsap.from('.section',{duration: .65, x:-5000})
-        gsap.to('.cars', {duration: .55, x:0, delay: .35})
-        gsap.to('.appDiv1', {duration: .65, x: 0, delay: .65, opacity: 1, ease: "sine.out"})
-        gsap.from('.text', {duration: .55, y: -100, delay: .65, stagger: 0.10, opacity: 0})
+        let tl = gsap.timeline();
+
+        tl.from('.section',{duration: .65, x:-5000})
+          .to('.cars', {duration: .55, x:0}, "<.4")
+          .to('.appDiv1', {duration: .35, x: 0, opacity: 1, ease: "sine.out"}, "<.4")
+          .from('.text', {duration: .35, y: -100, stagger: 0.10, opacity: 0}, "<")
+          
       },[]);
     
     const ElDiv = styled.div`

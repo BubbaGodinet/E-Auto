@@ -12,35 +12,37 @@ import wrench from './assets/wrench.0772f3e4.svg'
 export default function SummaryPage() {
 
     const OuterDiv = styled.div`
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    @media screen and (max-width: 1000px) {
-        flex-direction: column;
-    }
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+        }
     `
     const InnerDiv = styled.div`
-    transform: translate3d(0px, 0px, 0px);
-    opacity: 0;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(244, 244, 245);
-    height: 28.3vw;
-    width: 28.3vw;
-    @media screen and (max-width: 1000px) {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 0;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
         flex-direction: column;
-        height: 100vw;
-        width: 100vw;
-        margin-bottom: 3vw;
-    }
+        background-color: rgb(244, 244, 245);
+        height: 28.3vw;
+        width: 28.3vw;
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+            height: 100vw;
+            width: 100vw;
+            margin-bottom: 3vw;
+        }
     `
     const InnerTextDiv = styled.div`
     display: flex;
@@ -86,36 +88,38 @@ export default function SummaryPage() {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to('.innerDiv', {scrollTrigger: {trigger: '.innerDiv', start: 'top center'}, duration: .75, y: 70, opacity:1, stagger: .30});
+
+        gsap.to('.innerDiv', {scrollTrigger: {trigger: '.innerDiv', start: 'top center'}, duration: .75, y: 70, opacity:1, stagger: .30})
+
         },[])
         
     return(
         <SummarySection>
                 <OuterDiv>
                     <InnerDiv className='innerDiv'>
-                    <IconImg alt='coin' src={coin}/>
-                    <InnerTextDiv>
-                        <H2>SIMPLY MONTHLY PRICING</H2>
-                        <P>Pick your plan, pay the monthly price. <br/> Thats it. No hidden fees!</P>
-                    </InnerTextDiv>
+                        <IconImg alt='coin' src={coin}/>
+                        <InnerTextDiv>
+                            <H2>SIMPLY MONTHLY PRICING</H2>
+                            <P>Pick your plan, pay the monthly price. <br/> Thats it. No hidden fees!</P>
+                        </InnerTextDiv>
                     </InnerDiv>
                 </OuterDiv>
                 <OuterDiv>
-                  <InnerDiv className='innerDiv'>
-                    <IconImg alt='doc' src={doc}/>
-                    <InnerTextDiv>
-                        <H2>VEHICLE INSURANCE INCLUDED</H2>
-                        <P>That’s right, you’re covered.  All Eleanor plans include insurance coverage.</P>
-                    </InnerTextDiv>
-                    </InnerDiv>
+                    <InnerDiv className='innerDiv'>
+                        <IconImg alt='doc' src={doc}/>
+                        <InnerTextDiv>
+                            <H2>VEHICLE INSURANCE INCLUDED</H2>
+                            <P>That’s right, you’re covered.  All Eleanor plans include insurance coverage.</P>
+                        </InnerTextDiv>
+                        </InnerDiv>
                 </OuterDiv>
                 <OuterDiv>
-                <InnerDiv className='innerDiv'>
-                    <IconImg alt='wrench' src={wrench}/>
-                    <InnerTextDiv>
-                        <H2>MAINTENANCE IS COVERED</H2>
-                        <P>Leave it us. Don’t worry about maintaining your vehicle. Eleanor covers that as well.</P>
-                    </InnerTextDiv>
+                    <InnerDiv className='innerDiv'>
+                         <IconImg alt='wrench' src={wrench}/>
+                         <InnerTextDiv>
+                             <H2>MAINTENANCE IS COVERED</H2>
+                             <P>Leave it us. Don’t worry about maintaining your vehicle. Eleanor covers that as well.</P>
+                         </InnerTextDiv>
                     </InnerDiv>
                 </OuterDiv>
         </SummarySection>

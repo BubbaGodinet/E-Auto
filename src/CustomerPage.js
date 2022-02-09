@@ -18,7 +18,7 @@ export default function CustomerPage() {
         justify-content: center;
         align-items: flex-end;
         position: relative;
-        height: 80vh;
+        height: 72vh;
         width: 40vw;
 
         @media screen and (max-width: 1000px) {
@@ -201,13 +201,15 @@ export default function CustomerPage() {
     transform: translateY(0%);
     opacity: 1;
     `
-
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to('.backgroundDiv', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .45, opacity: 1, x:0});
-        gsap.to('.guyImg', {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:0, opacity: 1, delay: .40})
-        gsap.fromTo('.carImg', {x: '-100%', y: '50%'}, {scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}, duration: .35, x:'50%', opacity: 1, delay: .40})
-        gsap.from('.reviewDiv', {scrollTrigger: {trigger: '.reviewDiv', start: 'top center'}, duration: .55, y: -300, opacity: 0, delay: .70},)
+        let tl = gsap.timeline({scrollTrigger: {trigger:'.backgroundDiv', start: 'top center'}});
+
+        tl.to('.backgroundDiv', {duration: .45, opacity: 1, x:0})
+          .to('.guyImg', {duration: .35,x:0, opacity: 1})
+          .fromTo('.carImg', {x: '-100%', y: '50%'}, {duration: .25,x:'50%', opacity: 1}, "<")
+          .from('.reviewDiv', {duration: .55, y: -300, opacity: 0}, ">")
+          
         },[])
   
     return(

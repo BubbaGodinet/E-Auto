@@ -288,14 +288,19 @@ export default function SelectVehiclePage() {
     // const dataContainer2 = useRef();
     // const tl = gsap.timeline();
     
-    useEffect(() => {
+useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.fromTo(backgroundRef.current, {x:'100%'},{scrollTrigger: {trigger: backgroundRef.current, start: 'top center'}, duration: .85, x:'0%'})
-        gsap.from('.selectText', {scrollTrigger: {trigger: '.selectText', start: 'top center'}, duration: .55, y: -300, opacity: 0, stagger: .20})
+            
         gsap.to('.dataText', {scrollTrigger: {trigger: '.dataText', start: 'top center'}, delay: .4, opacity: 1}, 'Start');
         gsap.to('.arrowBttns', {scrollTrigger: {trigger: '.arrowBttns', start: 'top center'}, delay: .4, opacity: 1}, 'Start');
         gsap.fromTo('.car1', {x: '1000%',y: '30%'}, {scrollTrigger: {trigger: '.car1', start: 'top center', markers:true}, duration: .65, x: '40%', opacity: 1})
+
         if (index === 0) {
+            gsap.fromTo(backgroundRef.current, {x:'100%'},{scrollTrigger: {trigger: backgroundRef.current, start: 'top center'}, duration: .85, x:'0%'})
+            gsap.from('.selectText', {scrollTrigger: {trigger: '.selectText', start: 'top center'}, duration: .55, y: -300, opacity: 0, stagger: .20})
+            gsap.to('.dataText', {scrollTrigger: {trigger: '.dataText', start: 'top center'}, delay: .4, opacity: 1}, 'Start');
+            gsap.to('.arrowBttns', {scrollTrigger: {trigger: '.arrowBttns', start: 'top center'}, delay: .4, opacity: 1}, 'Start');
+            // gsap.fromTo('.car1', {x: '1000%',y: '30%'}, {scrollTrigger: {trigger: '.car1', start: 'top center', markers:true}, duration: .65, x: '40%', opacity: 1})
             // gsap.to('.dataText', {scrollTrigger: {trigger: '.selectBackground', start: 'top center'}, delay: .4, opacity: 1}, 'Start');
             gsap.fromTo('.car1', {x: '1000%',y: '30%'}, {scrollTrigger: {trigger: '.selectBackground', start: 'top center', markers:true}, duration: .65, x: '40%', opacity: 1})    
         } else if (index % 2 === 0 && index > 0) {

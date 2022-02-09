@@ -6,9 +6,6 @@ import {Section2} from './components/styles/Section2.styled'
 import porsche from './assets/porche-front.acc2162e.png'
 import app from './assets/app-3.c8673836.png'
 
-// gsap.registerPlugin(ScrollTrigger);
-
-// const plugins = [ ScrollTrigger ]
 export default function SwitchCarsPage() {
 
     const CarDiv = styled.div`
@@ -110,11 +107,15 @@ export default function SwitchCarsPage() {
         line-height: 7vw;
     }
     `
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to('.carImgDiv', {scrollTrigger: {trigger:'.textDiv',start:'top center'}, duration: .65, x:'0%'});
-        gsap.fromTo('.appImgDiv', {x: '45%',y: '-80%'}, {scrollTrigger: {trigger:'.textDiv', start:'top center'}, duration: .55, delay: .4, opacity: 1, y:'-50%'});
-        gsap.from('.textDiv', {scrollTrigger: {trigger:'.textDiv', start:'top center',markers:true}, duration: .55, y: -300, opacity: 0, stagger: .20})
+        let tl = gsap.timeline({scrollTrigger: {trigger:'.textDiv',start:'top center'}});
+
+        tl.to('.carImgDiv', {duration: .45, x:'0%'})
+          .fromTo('.appImgDiv', {x: '45%',y: '-80%'}, {duration: .55, opacity: 1, y:'-50%'})
+          .from('.textDiv', {duration: .55, y: -300, opacity: 0, stagger: .20}, "<")
+
         },[])
   
     return(

@@ -136,16 +136,18 @@ export default function DoorDeliveryPage() {
         width: 100%;
         }
     `
-
+   
+    
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.from('.mapDiv', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%', markers:true}, duration: .4, x: 2000, opacity: 1})
-        gsap.from('.deliverText', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, y: -300, opacity: 0, stagger: .20})
-        gsap.from('.appDiv', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, duration: .55, y: -300, opacity: 0})
-        gsap.from('.deliverCar', {scrollTrigger: {trigger:'.deliverText', start: 'top 40%'}, duration: .75, x:-800, opacity: 0})
-    },[])
+        let tl = gsap.timeline({scrollTrigger: {trigger:'.mapDiv', start: 'top 40%', markers:true}});
 
-    console.log('ScrollTrigger', ScrollTrigger)
+        tl.from('.mapDiv', { duration: .45, x: 2000, opacity: 1}, 'Start')
+          .from('.deliverText', {y: -300, opacity: 0, stagger: .20}, ">")
+          .from('.appDiv', {duration: .45, y: -300, opacity: 0}, "<")
+          .from('.deliverCar', {duration: .45, x:-800, opacity: 0}, "<")
+
+    },[])
 
     return(
         <DoorSection>
