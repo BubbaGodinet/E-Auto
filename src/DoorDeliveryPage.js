@@ -18,7 +18,7 @@ export default function DoorDeliveryPage() {
 
         @media screen and (max-width: 1000px) {
             height: unset;
-            margin-top: 6vw;
+            margin-top: 15vw;
             flex-direction: column;
         }
     `
