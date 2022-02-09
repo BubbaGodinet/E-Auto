@@ -26,7 +26,6 @@ useEffect(() => {
       <SummaryPage/>
       <CustomerPage/>
     </Main>
-    
   )
 }
 

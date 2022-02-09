@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import './loader.css'
 import {LoaderSection} from './components/styles/LoaderSection.styled'
 import {useEffect} from 'react'
 import {gsap} from "gsap";
@@ -18,6 +19,19 @@ export default function Loader() {
         -webkit-box-pack: justify;
         justify-content: space-between;
         justify-content: center; 
+
+        @media screen and (max-width: 799px) {
+            display: absolute;
+            position: absolute;
+            right: 25%;
+            top: 20%;
+        }
+
+        @media screen and (min-width: 800px) and (max-width: 1300px) {
+            position: absolute;
+            right: 25%;
+            top: 20%;
+        }
     `
     const ImgDiv = styled.div`
         display: flex;
@@ -40,26 +54,14 @@ export default function Loader() {
     const Dot = styled.img`
         position: absolute;
         height: 1%;
-        right: 59.3vw;
-        top: 43%;
         `
-        
-    useEffect(() => {
-        gsap.registerPlugin(MotionPathPlugin)
-        gsap.to('.dot', {
-            duration: 4,
-            repeat: -1, 
-            motionPath: 
-                 {path: 'M168.666,89.397 C157.306,54.594 192.389,16.136 219.835,5.726 244.65,-3.701 301.182,5.888 321.371,36.179 349.662,78.621 329.41,126.407 307.674,149.327 291.353,166.535 188.789,180.152 168.765,96.05 '}
-        })
-    },[])
     
     return (
         <LoaderSection>
             <LoaderDiv>
                 <ImgDiv>
                     <Crown alt={crown} src={crown}/>
-                    <Circle alt={circle} src={circle}/>
+                    <Circle alt={circle} src={circle}></Circle>
                     <Dot className='dot' alt={dot} src={dot}/>
                 </ImgDiv>
             </LoaderDiv>

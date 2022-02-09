@@ -1,0 +1,118 @@
+.dot {
+    
+    position: absolute;
+        right: 49.8%;
+        top: 49.5%;
+
+    -webkit-animation: myOrbit 4s linear infinite; 
+       -moz-animation: myOrbit 4s linear infinite; 
+         -o-animation: myOrbit 4s linear infinite; 
+            animation: myOrbit 4s linear infinite; 
+}
+
+
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(85px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(85px) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit {
+    from { -moz-transform: rotate(0deg) translateX(85px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(85px) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit {
+    from { -o-transform: rotate(0deg) translateX(85px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(85px) rotate(-360deg); }
+}
+
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(85px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(85px) rotate(-360deg); }
+}
+
+@media screen and (max-width: 767px) {
+.dot {
+    position: absolute;
+    right: 48.6%;
+    top: 49.5%;
+}
+
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(28px) rotate(-360deg); }
+}
+    
+@-moz-keyframes myOrbit {
+    from { -moz-transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(28px) rotate(-360deg); }
+}
+    
+@-o-keyframes myOrbit {
+    from { -o-transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(28px) rotate(-360deg); }
+}
+    
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(28px) rotate(-360deg); }
+}
+}
+
+@media screen and (min-width: 767px) and (max-width: 819px)  {
+
+.dot {
+        position: absolute;
+        right: 49.4%;
+        top: 49.5%;
+}
+    
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(32px) rotate(-360deg); }
+}
+        
+@-moz-keyframes myOrbit {
+    from { -moz-transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(32px) rotate(-360deg); }
+}
+        
+@-o-keyframes myOrbit {
+    from { -o-transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(32px) rotate(-360deg); }
+}
+        
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(32px) rotate(-360deg); }
+}
+}
+
+@media screen and (min-width: 820px) and (max-width: 1300px)  {
+.dot {
+    position: absolute;
+    right: 49.1%;
+    top: 49.5%;
+}
+
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(39.5px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(39.5px) rotate(-360deg); }
+}
+    
+@-moz-keyframes myOrbit {
+    from { -moz-transform: rotate(0deg) translateX(39.5px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(39.5px) rotate(-360deg); }
+}
+    
+@-o-keyframes myOrbit {
+    from { -o-transform: rotate(0deg) translateX(39.5px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(39.5px) rotate(-360deg); }
+}
+    
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(39.5px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(39.5px) rotate(-360deg); }
+}
+}
+
