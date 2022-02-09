@@ -77,9 +77,9 @@ export default function DoorDeliveryPage() {
             width: 30vh;
         }
 
-        @media (min-width: 800px) and (max-width: 1200px) {
+        @media (min-width: 768px) and (max-width: 1200px) {
             left: 30%;
-            top: 10%;
+            top: 11%;
         }
     `
     const MapImg = styled.img`

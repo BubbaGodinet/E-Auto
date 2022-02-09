@@ -6,11 +6,12 @@ export const Section2 = styled.section`
     background-color: white;
     height: 100vh;
     display: flex;
-@media screen and (max-width: 1000px) {
-    height: unset;
-    flex-direction: column-reverse;
-    margin-bottom: 10vw;
-    z-index: 0;
-}
+    
+    @media screen and (max-width: 1000px) {
+        height: unset;
+        flex-direction: column-reverse;
+        margin-bottom: 10vw;
+        z-index: 0;
+    }
 } 
 `

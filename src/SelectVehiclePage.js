@@ -31,7 +31,7 @@ export default function SelectVehiclePage() {
             padding: 30px;
         }
 
-        @media screen and (min-width:800px) and (max-width:1200px) {
+        @media screen and (min-width:768px) and (max-width:1200px) {
             height: 60vh;
             min-height: 80vw;
             margin-top: 1vh;
@@ -217,13 +217,13 @@ export default function SelectVehiclePage() {
         bottom: -31%;
         right: 0px;
 
-        @media screen and (max-width: 799px) {
+        @media screen and (max-width: 767px) {
             width: 90vw;
             left: -40%;
             top: 75vw;
         }
 
-        @media screen and (min-width: 800px) and (max-width: 1200px) {
+        @media screen and (min-width: 768px) and (max-width: 1200px) {
             left: -40%;
             width: 90vw;
             top: 55vw;
@@ -232,7 +232,7 @@ export default function SelectVehiclePage() {
     const CarImg1 = styled.img`
         opacity: 0;
         width: 100%;
-
+        
         @media screen and (max-width: 1000px) {
             top: 10vw;
         }
@@ -263,13 +263,13 @@ export default function SelectVehiclePage() {
         margin: 0px;
         white-space: pre-line;
 
-        @media screen and (max-width: 799px) {
+        @media screen and (max-width: 767px) {
             font-size: 7vw;
             line-height: 8.5vw;
             white-space: unset;
         }
 
-        @media screen and (min-width: 800px) and (max-width: 1300px) {
+        @media screen and (min-width: 768px) and (max-width: 1300px) {
             font-size: 6vw;
             line-height: 6.5vw;
             white-space: unset;
