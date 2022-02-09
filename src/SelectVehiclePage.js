@@ -31,7 +31,7 @@ export default function SelectVehiclePage() {
             padding: 30px;
         }
 
-        @media (min-width:800px) and (max-width:1200px) {
+        @media screen and (min-width:800px) and (max-width:1200px) {
             height: 60vh;
             min-height: 80vw;
             margin-top: 1vh;
@@ -223,7 +223,7 @@ export default function SelectVehiclePage() {
             top: 75vw;
         }
 
-        @media (min-width: 800px) and (max-width: 1200px) {
+        @media screen and (min-width: 800px) and (max-width: 1200px) {
             left: -40%;
             width: 90vw;
             top: 55vw;
@@ -269,7 +269,7 @@ export default function SelectVehiclePage() {
             white-space: unset;
         }
 
-        @media screen (min-width: 800px) and (max-width: 1300px) {
+        @media screen and (min-width: 800px) and (max-width: 1300px) {
             font-size: 6vw;
             line-height: 6.5vw;
             white-space: unset;

@@ -65,7 +65,7 @@ export default function DoorDeliveryPage() {
         opacity: 1;
         position: absolute;
         left: 38%;
-        top: -10%;
+        top: -8%;
         width: 36.7vh;
         font-size: 0px;
         border-radius: 35px;
@@ -73,7 +73,7 @@ export default function DoorDeliveryPage() {
 
         @media screen and (max-width: 1000px) {
             left: 17%;
-            top: 10%;
+            top: 8%;
             width: 30vh;
         }
 
@@ -156,7 +156,7 @@ export default function DoorDeliveryPage() {
 
         tl.from('.mapDiv', { duration: .45, x: 2000, opacity: 1})
           .from('.deliverText', {y: -300, opacity: 0, stagger: .20}, ">")
-          .from('.appDiv', {duration: .45, y: -300, opacity: 0}, "<")
+          .from('.appDiv', {duration: .75, y: -300, opacity: 0}, "<")
           .from('.deliverCar', {duration: .45, x:-800, opacity: 0}, "<")
 
     },[])

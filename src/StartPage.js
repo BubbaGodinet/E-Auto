@@ -167,7 +167,7 @@ export default function StartPage() {
 
         tl.from('.section',{duration: .65, x:-5000})
           .to('.cars', {duration: .55, x:0}, "<.4")
-          .to('.appDiv1', {duration: .35, x: 0, opacity: 1, ease: "sine.out"}, "<.3")
+          .to('.appDiv1', {duration: .75, x: 0, opacity: 1, ease: "sine.out"}, "<.3")
           .from('.text', {duration: .35, y: -100, stagger: 0.10, opacity: 0}, "<")
 
       },[]);
