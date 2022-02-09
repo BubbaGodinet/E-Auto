@@ -148,9 +148,8 @@ export default function DoorDeliveryPage() {
         gsap.registerPlugin(ScrollTrigger);
         let tl = gsap.timeline({
             scrollTrigger: {
-               trigger:'.mapDiv', 
+               trigger:'.deliverText', 
                start: 'top 60%', 
-               markers:true
             }
         });
 

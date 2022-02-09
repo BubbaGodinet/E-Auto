@@ -306,7 +306,7 @@ export default function SelectVehiclePage() {
             gsap.to('.arrowBttns', {scrollTrigger: {trigger: '.arrowBttns', start: 'top center'}, opacity: 1})
             gsap.from('.selectText', {scrollTrigger: {trigger: '.selectText', start: 'top center'}, duration: .55, y: -300, opacity: 0, stagger: .20})
             gsap.to('.dataText', {scrollTrigger: {trigger: '.dataText', start: 'top center'}, delay: .4, opacity: 1});
-            gsap.fromTo('.car1', {x: '200%',y: '30%', opacity: 0}, {scrollTrigger: {trigger: '.dataText', start: 'top center', markers:true}, duration: .65, x: '40%', opacity: 1})    
+            gsap.fromTo('.car1', {x: '200%',y: '30%', opacity: 0}, {scrollTrigger: {trigger: '.dataText', start: 'top center'}, duration: .65, x: '40%', opacity: 1})    
         } else if (index % 2 === 0 && index > 0) {
             gsap.fromTo('.car1', {x: '60%',y: '30%', opacity: 0}, {duration: .65, x: '40%', opacity: 1})
             gsap.fromTo('.car2', {x: '50%',y: '-70%', opacity: 1}, {duration: .65, x: '-20%', opacity: 0})
