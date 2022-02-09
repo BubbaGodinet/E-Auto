@@ -12,22 +12,22 @@
 
 
 @-webkit-keyframes myOrbit {
-    from { -webkit-transform: rotate(0deg) translateX(85px) rotate(0deg); }
+    from { -webkit-transform: rotate(180deg) translateX(85px) rotate(0deg); }
     to   { -webkit-transform: rotate(360deg) translateX(85px) rotate(-360deg); }
 }
 
 @-moz-keyframes myOrbit {
-    from { -moz-transform: rotate(0deg) translateX(85px) rotate(0deg); }
+    from { -moz-transform: rotate(180deg) translateX(85px) rotate(0deg); }
     to   { -moz-transform: rotate(360deg) translateX(85px) rotate(-360deg); }
 }
 
 @-o-keyframes myOrbit {
-    from { -o-transform: rotate(0deg) translateX(85px) rotate(0deg); }
+    from { -o-transform: rotate(180deg) translateX(85px) rotate(0deg); }
     to   { -o-transform: rotate(360deg) translateX(85px) rotate(-360deg); }
 }
 
 @keyframes myOrbit {
-    from { transform: rotate(0deg) translateX(85px) rotate(0deg); }
+    from { transform: rotate(180deg) translateX(85px) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(85px) rotate(-360deg); }
 }
 
@@ -39,22 +39,22 @@
 }
 
 @-webkit-keyframes myOrbit {
-    from { -webkit-transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    from { -webkit-transform: rotate(180deg) translateX(28px) rotate(0deg); }
     to   { -webkit-transform: rotate(360deg) translateX(28px) rotate(-360deg); }
 }
     
 @-moz-keyframes myOrbit {
-    from { -moz-transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    from { -moz-transform: rotate(180deg) translateX(28px) rotate(0deg); }
     to   { -moz-transform: rotate(360deg) translateX(28px) rotate(-360deg); }
 }
     
 @-o-keyframes myOrbit {
-    from { -o-transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    from { -o-transform: rotate(180deg) translateX(28px) rotate(0deg); }
     to   { -o-transform: rotate(360deg) translateX(28px) rotate(-360deg); }
 }
     
 @keyframes myOrbit {
-    from { transform: rotate(0deg) translateX(28px) rotate(0deg); }
+    from { transform: rotate(180deg) translateX(28px) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(28px) rotate(-360deg); }
 }
 }
@@ -68,22 +68,22 @@
 }
     
 @-webkit-keyframes myOrbit {
-    from { -webkit-transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    from { -webkit-transform: rotate(180deg) translateX(32px) rotate(0deg); }
     to   { -webkit-transform: rotate(360deg) translateX(32px) rotate(-360deg); }
 }
         
 @-moz-keyframes myOrbit {
-    from { -moz-transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    from { -moz-transform: rotate(180deg) translateX(32px) rotate(0deg); }
     to   { -moz-transform: rotate(360deg) translateX(32px) rotate(-360deg); }
 }
         
 @-o-keyframes myOrbit {
-    from { -o-transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    from { -o-transform: rotate(180deg) translateX(32px) rotate(0deg); }
     to   { -o-transform: rotate(360deg) translateX(32px) rotate(-360deg); }
 }
         
 @keyframes myOrbit {
-    from { transform: rotate(0deg) translateX(32px) rotate(0deg); }
+    from { transform: rotate(180deg) translateX(32px) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(32px) rotate(-360deg); }
 }
 }
@@ -96,22 +96,22 @@
 }
 
 @-webkit-keyframes myOrbit {
-    from { -webkit-transform: rotate(0deg) translateX(39.5px) rotate(0deg); }
+    from { -webkit-transform: rotate(180deg) translateX(39.5px) rotate(0deg); }
     to   { -webkit-transform: rotate(360deg) translateX(39.5px) rotate(-360deg); }
 }
     
 @-moz-keyframes myOrbit {
-    from { -moz-transform: rotate(0deg) translateX(39.5px) rotate(0deg); }
+    from { -moz-transform: rotate(180deg) translateX(39.5px) rotate(0deg); }
     to   { -moz-transform: rotate(360deg) translateX(39.5px) rotate(-360deg); }
 }
     
 @-o-keyframes myOrbit {
-    from { -o-transform: rotate(0deg) translateX(39.5px) rotate(0deg); }
+    from { -o-transform: rotate(180deg) translateX(39.5px) rotate(0deg); }
     to   { -o-transform: rotate(360deg) translateX(39.5px) rotate(-360deg); }
 }
     
 @keyframes myOrbit {
-    from { transform: rotate(0deg) translateX(39.5px) rotate(0deg); }
+    from { transform: rotate(180deg) translateX(39.5px) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(39.5px) rotate(-360deg); }
 }
 }

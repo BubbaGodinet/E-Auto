@@ -9,16 +9,21 @@ import {Main} from './components/styles/Main.styled'
 import {useState, useEffect} from 'react'
 
 function App() {
-const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+    
+    const handleLoading = () => {
+    setIsLoading(false);
+    }
 
-useEffect(() => {
-  setIsLoading(false)
-},[])
+  useEffect(()=>{
+    window.addEventListener("load",handleLoading);
+    return () => window.removeEventListener("load",handleLoading);
+    },[])
 
-  if (isLoading === true) return <Loader/>
-
-  return (
-    <Main>
+  return isLoading ? (
+    <Loader/>)
+    :
+    (<Main>
       <StartPage/>
       <SelectVehiclePage/>
       <DoorDeliveryPage/>
