@@ -324,13 +324,13 @@ export default function SelectVehiclePage() {
         } else if (index % 2 === 0 && index > 0) {
             gsap.fromTo('.car1', {x: '60%',y: '30%', opacity: 0}, {duration: .65, x: '40%', opacity: 1})
             gsap.fromTo('.car2', {x: '50%',y: '-70%', opacity: 1}, {duration: .65, x: '-20%', opacity: 0})
-            gsap.fromTo('.dataText', {opacity:1},{opacity: 0, duration: .75, y: '-30%'});
-            gsap.fromTo('.dataText2', {opacity: 0},{opacity: 1, duration: .75});
+            gsap.fromTo('.dataText2', {opacity:1},{opacity: 0, duration: .75, y: '-30%'});
+            gsap.fromTo('.dataText', {opacity: 0},{opacity: 1, duration: .75});
         } else if (index % 2 === 1) {
             gsap.fromTo('.car1', {x: '60%',y: '30%', opacity: 1}, {duration: .35, x: '-20%', opacity: 0})
             gsap.fromTo('.car2', {x: '50%',y: '-70%', opacity: 0}, {duration: .65, x: '40%', opacity: 1})
-            gsap.fromTo('.dataText', {opacity: 0},{opacity: 1});
-            gsap.fromTo('.dataText2', {opacity:1},{opacity: 0, duration: .75, y: '-30%'});
+            gsap.fromTo('.dataText2', {opacity: 0},{opacity: 1});
+            gsap.fromTo('.dataText', {opacity:1},{opacity: 0, duration: .75, y: '-30%'});
         }
     }, [index])
 
