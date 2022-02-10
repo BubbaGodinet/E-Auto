@@ -213,7 +213,7 @@ export default function CustomerPage() {
         tl.to('.backgroundDiv', {duration: .45, opacity: 1, x:0})
           .to('.guyImg', {duration: .35,x:0, opacity: 1})
           .fromTo('.carImg', {x: '-100%', y: '50%'}, {duration: .25,x:'50%', opacity: 1}, "<")
-          .from('.reviewDiv', {duration: .55, y: -300, opacity: 0}, ">")
+          .from('.reviewDiv', {duration: .55, y: '-20%', opacity: 0}, ">")
 
         },[])
   
