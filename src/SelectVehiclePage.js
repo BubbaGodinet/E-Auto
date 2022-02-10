@@ -314,7 +314,7 @@ export default function SelectVehiclePage() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-            gsap.to('.arrowBttns', {scrollTrigger: {trigger: '.arrowBttns', start: 'top center'}, opacity: 1})
+            gsap.to('.arrowBttns', {scrollTrigger: {trigger: backgroundRef.current, start: 'top center'}, opacity: 1})
         if (index === 0) {
             gsap.fromTo(backgroundRef.current, {x:'100%'},{scrollTrigger: {trigger: backgroundRef.current, start: 'top center'}, duration: .45, x:'0%'})
             gsap.to('.arrowBttns', {scrollTrigger: {trigger: '.arrowBttns', start: 'top center'}, opacity: 1})

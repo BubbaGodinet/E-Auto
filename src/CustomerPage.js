@@ -88,18 +88,18 @@ export default function CustomerPage() {
     `
     const ReviewH2 = styled.h2`
         color: rgb(43, 49, 68);
-        font-size: 3.5vw;
+        font-size: 3.9vw;
         font-weight: bold;
         line-height: 4.5vw;
         margin: 0px;
         white-space: pre-line;
-        letter-spacing: 0vw;
+        letter-spacing: -.1vw;
 
         @media screen and (max-width: 1000px) {
-            font-size: 6vw;
-            line-height: 7vw;
+            font-size: 7vw;
+            line-height: 8vw;
             white-space: unset;
-            letter-spacing: -0.3vw;
+            letter-spacing: .1vw;
         }
     `
     const ReviewP = styled.p`
@@ -107,10 +107,10 @@ export default function CustomerPage() {
         font-size: 1vw;
         font-weight: normal;
         line-height: 1.8vw;
-        width: 90%;
         white-space: pre-line;
         margin-top: 2vw;
         width: 55%;
+
         @media only screen and (max-width: 1000px) {
             margin-top: 4vw;
             font-size: 3.5vw;
@@ -205,8 +205,8 @@ export default function CustomerPage() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         let tl = gsap.timeline({scrollTrigger: {
-            trigger:'.backgroundDiv', 
-            start: 'top 80%',
+            trigger:'.reviewDiv', 
+            start: 'top 80%'
         }
     });
 
@@ -229,7 +229,7 @@ export default function CustomerPage() {
                 <CarImg alt='guy' className='carImg' src={car}/>
             </CustomerDiv>
             <ReviewDiv className="reviewDiv">
-                <ReviewH2>CUSTOMERS WITH <br/> THAT NEW CAR SMELL</ReviewH2>
+                <ReviewH2>CUSTOMERS WITH THAT NEW CAR SMELL</ReviewH2>
                 <ReviewP className='review'>“With Eleanor I was able to drive 2 of my dream cars this year!  
                 The process is always easy and affordable!”</ReviewP>
                 <ReviewerP className='reviewer'>Alex Bateman, Interface Designer</ReviewerP>
