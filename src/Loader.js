@@ -3,7 +3,6 @@ import './loader.css'
 import {LoaderSection} from './components/styles/LoaderSection.styled'
 import {useEffect} from 'react'
 import {gsap} from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import crown from './assets/crown.png'
 import circle from './assets/Oval.png'
 import dot from './assets/dot.png'
