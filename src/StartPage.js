@@ -117,10 +117,50 @@ export default function StartPage() {
         bottom: 150px;
         left: -6.5%;
 
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 480px) {
             width: 55vw;
             bottom: 2vh;
-            left: -5.5%;
+            left: 0vw;
+        }
+
+        @media screen and (min-width: 481px) and (max-width:767px) {
+            width: 55vw;
+            bottom: 2vh;
+            left: 0vw;
+        }
+
+        @media screen and (min-width: 768px) and (max-width:1200px) {
+            width: 48vw;
+            bottom: 1.5vw;
+            left: 0vw;
+        }
+    `
+
+    const CarMiddle = styled.img`
+        transform: translateX(-100%);
+        position: absolute;
+        width: 45.7vw;
+        bottom: 110px;
+        left: 6%;
+
+        @media screen and (max-width: 480px) {
+            z-index: 1;
+            width: 68vw;
+            bottom: -.25vw;
+            left: 19vw;
+        }
+
+        @media screen and (min-width: 481px) and (max-width:767px) {
+            z-index: 1;
+            width: 68vw;
+            bottom: -.25vw;
+            left: 19vw;
+        }
+
+        @media screen and (min-width: 768px) and (max-width:1200px) {
+            width: 60vw;
+            bottom: 0vw;
+            left: 20vw;
         }
     `
     
@@ -131,25 +171,22 @@ export default function StartPage() {
         left: 23%;
         position: absolute;
 
-        @media screen and (max-width: 1000px) {
-            width: 68vw;
-            bottom: 1vh;
-            left: 52%;
+        @media screen and (max-width: 480px) {
+            width: 62vw;
+            bottom: 4vw;
+            left: 44vw;
         }
-    `
-    const CarMiddle = styled.img`
-        transform: translateX(-100%);
-        position: absolute;
-        width: 45.7vw;
-        bottom: 110px;
-        left: 6%;
 
-        @media screen and (max-width: 1000px) {
-            position: absolute;
-            z-index: 1000;
-            width: 68vw;
-            bottom: -.5vh;
-            left: 13%;
+        @media screen and (min-width: 481px) and (max-width:767px) {
+            width: 62vw;
+            bottom: 4vw;
+            left: 44vw;
+        }
+
+        @media screen and (min-width: 768px) and (max-width:1200px) {
+            width: 55vw;
+            bottom: 2vw;
+            left: 50vw;
         }
     `
     const AppImg = styled.img`

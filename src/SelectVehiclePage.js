@@ -23,16 +23,24 @@ export default function SelectVehiclePage() {
         padding: 30px;
         min-height: 40vw;
 
-        @media screen and (max-width: 799px) {
-            height: 50vh;
+        @media screen and (max-width: 480px) {
+            height: 90vw;
             min-height: 80vw;
             margin-top: 1vh;
             width: 100%;
             padding: 30px;
         }
 
-        @media screen and (min-width:768px) and (max-width:1200px) {
-            height: 60vh;
+        @media screen and (min-width: 481px) and (max-width:767px) {
+            height: 90vw;
+            min-height: 80vw;
+            margin-top: 1vh;
+            width: 100%;
+            padding: 30px;
+        }
+
+        @media screen and (min-width: 768px) and (max-width:1024px) {
+            height: 50vh;
             min-height: 80vw;
             margin-top: 1vh;
             width: 100%;
@@ -217,16 +225,22 @@ export default function SelectVehiclePage() {
         bottom: -31%;
         right: 0px;
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 480px) {
             width: 90vw;
             left: -40%;
-            top: 75vw;
+            top: 65vw;
+        }
+
+        @media screen and (min-width: 481px) and (max-width:767px) {
+            width: 90vw;
+            left: -40%;
+            top: 65vw;
         }
 
         @media screen and (min-width: 768px) and (max-width: 1200px) {
             left: -40%;
             width: 90vw;
-            top: 55vw;
+            top: 54vw;
         }
     `
     const CarImg1 = styled.img`

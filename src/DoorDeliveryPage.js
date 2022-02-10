@@ -16,7 +16,25 @@ export default function DoorDeliveryPage() {
         height: 100vh;
         display: flex;
 
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 480px) {
+            height: unset;
+            margin-top: 27vw;
+            flex-direction: column;
+        }
+
+        @media screen and (min-width: 481px) and (max-width: 767px) {
+            height: unset;
+            margin-top: 15vw;
+            flex-direction: column;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            height: unset;
+            margin-top: 15vw;
+            flex-direction: column;
+        }
+
+        @media screen and (min-width: 1025px) and (max-width: 1280px) {
             height: unset;
             margin-top: 15vw;
             flex-direction: column;
@@ -42,7 +60,7 @@ export default function DoorDeliveryPage() {
             overflow: hidden;
             width: 110%;
             margin-left: -5%;
-            padding: 45vh 0px;
+            padding: 70vw 0px;
         }
     `
     const MapDiv = styled.div`
@@ -61,25 +79,19 @@ export default function DoorDeliveryPage() {
         }
     `
     const AppDiv = styled.div`
-        transform: translate(0%, 5%);
-        opacity: 1;
         position: absolute;
         left: 38%;
         top: -8%;
-        width: 36.7vh;
+        width: 20vw;
         font-size: 0px;
         border-radius: 35px;
         filter: drop-shadow(rgba(0, 0, 0, 0.4) -20px 20px 25px);
 
-        @media screen and (max-width: 1000px) {
-            left: 17%;
-            top: 8%;
-            width: 30vh;
-        }
-
-        @media (min-width: 768px) and (max-width: 1200px) {
-            left: 30%;
-            top: 11%;
+        @media screen and (min-width: 0px) and (max-width: 1280px) {
+            left: 23vw;
+            top: 12vw;
+            width: 50vw;
+            filter: none;
         }
     `
     const MapImg = styled.img`
@@ -155,8 +167,8 @@ export default function DoorDeliveryPage() {
 
         tl.from('.mapDiv', { duration: .45, x: 2000, opacity: 1})
           .from('.deliverText', {y: -300, opacity: 0, stagger: .20}, ">")
-          .from('.appDiv', {duration: .75, y: -300, opacity: 0}, "<")
-          .from('.deliverCar', {duration: .45, x:-800, opacity: 0}, "<")
+          .fromTo('.appDiv', {duration: .45, y:'-100%', opacity: 0},{ y: '3%', opacity: 1}, "<")
+          .fromTo('.deliverCar', {duration: .45, x:'-200%', opacity: 0},{ x:'-47%', opacity: 1}, "<")
 
     },[])
 

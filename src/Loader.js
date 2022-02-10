@@ -19,15 +19,27 @@ export default function Loader() {
         -webkit-box-pack: justify;
         justify-content: space-between;
         justify-content: center; 
-
-        @media screen and (max-width: 799px) {
+        
+        @media screen and (max-width: 480px) {
             display: absolute;
             position: absolute;
             right: 25%;
             top: 20%;
         }
 
-        @media screen and (min-width: 800px) and (max-width: 1300px) {
+        @media screen and (min-width: 481px) and (max-width: 767px) {
+            position: absolute;
+            right: 25%;
+            top: 20%;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            position: absolute;
+            right: 25%;
+            top: 20%;
+        }
+
+        @media screen and (min-width: 1025px) and (max-width: 1280px) {
             position: absolute;
             right: 25%;
             top: 20%;
@@ -45,15 +57,16 @@ export default function Loader() {
     `
     const Crown = styled.img`
         position: absolute;
-        height: 3%;
+        height: auto;
     `
     const Circle = styled.img`
         position: absolute;
-        height: 13.1%;
+        height: auto;
+
     `
     const Dot = styled.img`
         position: absolute;
-        height: 1%;
+        height: auto;
         `
     
     return (
