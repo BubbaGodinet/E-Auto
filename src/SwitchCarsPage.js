@@ -53,15 +53,21 @@ export default function SwitchCarsPage() {
         border-radius: 35px;
         filter: drop-shadow(rgba(0, 0, 0, 0.2) 20px 20px 25px);
 
-        @media only screen and (max-width: 1024px) {
-            right: 0px;
+        @media screen and (max-width: 480px) {
+            right: 2vw;
             top: 50%;
-            width: 25vh;
+            width: 50vw;
         }
 
-        @media (min-width: 800px) and (max-width: 1200px) {
-            left: 35%;
-            width: 30vh;
+        @media screen and (min-width: 481px) and (max-width:767px) {
+            right: 6vw;
+            top: 50%;
+            width: 41vw;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1200px) {
+            left: 42%;
+            width: 45vw;
         }
     `
     const AppImg = styled.img`

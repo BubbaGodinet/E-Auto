@@ -16,7 +16,7 @@ export default function CustomerPage() {
         justify-content: center;
         align-items: flex-end;
         position: relative;
-        height: 72vh;
+        height: 45vw;
         width: 40vw;
 
         @media screen and (max-width: 1000px) {
@@ -66,7 +66,7 @@ export default function CustomerPage() {
         opacity: 1;
         flex: 1 1 0%;
         margin-left: 6vw;
-        margin-top: 10vh;
+        margin-top: 3vw;
         display: block;
 
         @media screen and (max-width: 1000px) {

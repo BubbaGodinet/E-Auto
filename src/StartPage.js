@@ -174,7 +174,7 @@ export default function StartPage() {
         @media screen and (max-width: 480px) {
             width: 62vw;
             bottom: 4vw;
-            left: 44vw;
+            left: 42.5vw;
         }
 
         @media screen and (min-width: 481px) and (max-width:767px) {
@@ -186,7 +186,7 @@ export default function StartPage() {
         @media screen and (min-width: 768px) and (max-width:1200px) {
             width: 55vw;
             bottom: 2vw;
-            left: 50vw;
+            left: 49vw;
         }
     `
     const AppImg = styled.img`

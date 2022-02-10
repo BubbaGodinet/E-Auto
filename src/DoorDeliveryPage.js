@@ -81,16 +81,16 @@ export default function DoorDeliveryPage() {
     const AppDiv = styled.div`
         position: absolute;
         left: 38%;
-        top: -8%;
-        width: 20vw;
+        top: -15%;
+        width: 19vw;
         font-size: 0px;
         border-radius: 35px;
         filter: drop-shadow(rgba(0, 0, 0, 0.4) -20px 20px 25px);
 
         @media screen and (min-width: 0px) and (max-width: 1280px) {
             left: 23vw;
-            top: 12vw;
-            width: 50vw;
+            top: 3vw;
+            width: 55vw;
             filter: none;
         }
     `
@@ -165,8 +165,8 @@ export default function DoorDeliveryPage() {
             }
         });
 
-        tl.from('.mapDiv', { duration: .45, x: 2000, opacity: 1})
-          .from('.deliverText', {y: -300, opacity: 0, stagger: .20}, ">")
+        tl.from('.mapDiv', { duration: .45, x: '200%', opacity: 1})
+          .from('.deliverText', {y: '-300%', opacity: 0, stagger: .20}, ">")
           .fromTo('.appDiv', {duration: .45, y:'-100%', opacity: 0},{ y: '3%', opacity: 1}, "<")
           .fromTo('.deliverCar', {duration: .45, x:'-200%', opacity: 0},{ x:'-47%', opacity: 1}, "<")
 

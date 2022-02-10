@@ -90,10 +90,10 @@ export default function SummaryPage() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to('.innerDiv', {scrollTrigger: {
+        gsap.fromTo('.innerDiv', {y: '-20%'}, {scrollTrigger: {
             trigger: '.innerDiv', 
             start: 'top center'
-        }, duration: .75, y: 70, opacity:1, stagger: .30})
+        }, duration: .75, y: '0%', opacity:1, stagger: .30})
 
         },[])
         
@@ -103,7 +103,7 @@ export default function SummaryPage() {
                     <InnerDiv className='innerDiv'>
                         <IconImg alt='coin' src={coin}/>
                         <InnerTextDiv>
-                            <H2>SIMPLY MONTHLY PRICING</H2>
+                            <H2>SIMPLE MONTHLY PRICING</H2>
                             <P>Pick your plan, pay the monthly price. <br/> Thats it. No hidden fees!</P>
                         </InnerTextDiv>
                     </InnerDiv>
