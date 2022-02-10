@@ -206,7 +206,7 @@ export default function CustomerPage() {
         gsap.registerPlugin(ScrollTrigger);
         let tl = gsap.timeline({scrollTrigger: {
             trigger:'.backgroundDiv', 
-            start: 'top center'
+            start: 'top 80%',
         }
     });
 
