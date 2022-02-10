@@ -7,6 +7,7 @@ export const Section2 = styled.section`
     height: 100vh;
     display: flex;
     
+    
     @media screen and (max-width: 480px) {
         height: unset;
         flex-direction: column-reverse;

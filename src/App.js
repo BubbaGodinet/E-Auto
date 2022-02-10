@@ -12,12 +12,7 @@ function App() {
     const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=>{
-    document.onreadystatechange = () => {
-      if (document.readyState === 'complete') {
-        // document ready
         setIsLoading(false)
-      }
-    }
     },[])
 
   return isLoading ? (
