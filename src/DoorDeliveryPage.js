@@ -70,12 +70,12 @@ export default function DoorDeliveryPage() {
         margin-top: 8%;
         overflow: hidden;
 
-        @media only screen and (max-width: 1000px) {
-            left: 50%;
-            top: 50%;
+        @media screen and (max-width: 1000px) {
             margin-top: 0px;
             width: 130%;
-            transform: translate(-57%, -50%);
+            left: -25vw;
+            top: 20vw;
+            // transform: translate(-57%, -50%);
         }
     `
     const AppDiv = styled.div`
@@ -88,9 +88,9 @@ export default function DoorDeliveryPage() {
         filter: drop-shadow(rgba(0, 0, 0, 0.4) -20px 20px 25px);
 
         @media screen and (min-width: 0px) and (max-width: 1280px) {
-            left: 23vw;
-            top: 3vw;
-            width: 55vw;
+            left: 25vw;
+            top: 0vw;
+            width: 50vw;
             filter: none;
         }
     `
@@ -160,13 +160,13 @@ export default function DoorDeliveryPage() {
         gsap.registerPlugin(ScrollTrigger);
         let tl = gsap.timeline({
             scrollTrigger: {
-               trigger:'.deliverText', 
+               trigger:'.mapDiv', 
                start: 'top 60%', 
             }
         });
 
-        tl.from('.mapDiv', { duration: .45, x: '200%', opacity: 1})
-          .from('.deliverText', {y: '-300%', opacity: 0, stagger: .20}, ">")
+        tl.fromTo('.mapDiv', { duration: .45, x: '200%', opacity: 1}, {x: '0%'})
+          .fromTo('.deliverText', {y: '-300%', opacity: 0}, {opacity: 1, y: '0%', stagger: .20}, ">")
           .fromTo('.appDiv', {duration: .45, y:'-100%', opacity: 0},{ y: '3%', opacity: 1}, "<")
           .fromTo('.deliverCar', {duration: .45, x:'-200%', opacity: 0},{ x:'-47%', opacity: 1}, "<")
 
