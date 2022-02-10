@@ -14,9 +14,21 @@ export default function SwitchCarsPage() {
         width: 30vw;
         transform: translateY(-6vh);
 
-        @media screen and (max-width: 1024px) {
-            height: 75vh;
-            width: 80vw;
+        @media screen and (max-width: 480px) {
+            height: 120vw;
+            width: 77vw;
+            transform: translate(-10%, 2vh);
+        }
+
+        @media screen and (min-width: 481px) and (max-width: 767px) {
+            height: 115vw;
+            width: 77vw;
+            transform: translate(-10%, 2vh);
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            height: 120vw;
+            width: 77vw;
             transform: translate(-10%, 2vh);
         }
     `
@@ -60,14 +72,14 @@ export default function SwitchCarsPage() {
         }
 
         @media screen and (min-width: 481px) and (max-width:767px) {
-            right: 6vw;
+            right: 4vw;
             top: 50%;
-            width: 41vw;
+            width: 48vw;
         }
 
         @media screen and (min-width: 768px) and (max-width: 1200px) {
-            left: 42%;
-            width: 45vw;
+            left: 35%;
+            width: 50vw;
         }
     `
     const AppImg = styled.img`
