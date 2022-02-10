@@ -166,7 +166,7 @@ export default function DoorDeliveryPage() {
         });
 
         tl.fromTo('.mapDiv', { duration: .45, x: '200%', opacity: 1}, {x: '0%'})
-          .fromTo('.deliverText', {y: '-300%', opacity: 0}, {opacity: 1, y: '0%', stagger: .20}, ">")
+          .fromTo('.deliverText', {y: '-100%', opacity: 0}, {opacity: 1, y: '0%', stagger: .20}, ">")
           .fromTo('.appDiv', {duration: .45, y:'-100%', opacity: 0},{ y: '3%', opacity: 1}, "<")
           .fromTo('.deliverCar', {duration: .45, x:'-200%', opacity: 0},{ x:'-47%', opacity: 1}, "<")
 
