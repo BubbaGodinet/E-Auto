@@ -6,9 +6,10 @@ export const SummarySection = styled.section`
     background-color: rgb(255, 255, 255);
     height: 70vh;
     overflow: hidden;
-    margin-top: 20%;
+    
 
     @media screen and (max-width: 1000px) {
+        margin-top: 20%;
         flex-direction: column;
         padding: 2vh 5% 0px;
         height: unset;
