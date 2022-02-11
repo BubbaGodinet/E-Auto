@@ -46,6 +46,16 @@ export default function SelectVehiclePage() {
             width: 100%;
             padding: 30px;
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            height: 55vh;
+            width: 33vw;
+            padding: 30px;
+            min-height: 40vw;
+        }
     `
     const SelectorDiv = styled.div`
         position: absolute;
@@ -242,6 +252,12 @@ export default function SelectVehiclePage() {
             width: 90vw;
             top: 54vw;
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            left: -20%;
+            width: 40vw;
+            top: 27.5vw;
+        }
     `
     const CarImg1 = styled.img`
         opacity: 0;
@@ -268,6 +284,10 @@ export default function SelectVehiclePage() {
             padding-left: 0px;
             margin-top: 12vh;
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1280px) and (orientation: landscape) {
+            margin-top: 10vh;
+        }
     `
     const TitleH2 = styled.h2`
         color: rgb(43, 49, 68);
@@ -288,6 +308,12 @@ export default function SelectVehiclePage() {
             line-height: 6.5vw;
             white-space: unset;
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1280px) and (orientation: landscape) {
+            font-size: 4vw;
+            line-height: 4.5vw;
+            white-space: unset;
+        }
     `
     const Summary = styled.p`
         color: rgb(0, 0, 0);
@@ -305,6 +331,10 @@ export default function SelectVehiclePage() {
             line-height: 6vw;
             white-space: unset;
             width: 100%;
+        }
+
+        @media screen and (min-width: 1280px) and (orientation: landscape) {
+            width: 90%;
         }
     `
 

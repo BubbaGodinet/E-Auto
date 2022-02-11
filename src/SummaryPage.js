@@ -17,7 +17,7 @@ export default function SummaryPage() {
         height: 100%;
         -webkit-box-pack: justify;
         justify-content: space-between;
-
+        
         @media screen and (max-width: 1000px) {
             flex-direction: column;
         }

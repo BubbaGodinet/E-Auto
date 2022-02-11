@@ -18,7 +18,7 @@ export default function DoorDeliveryPage() {
 
         @media screen and (max-width: 480px) {
             height: unset;
-            margin-top: 27vw;
+            margin-top: 15vw;
             flex-direction: column;
         }
 
@@ -36,8 +36,16 @@ export default function DoorDeliveryPage() {
 
         @media screen and (min-width: 1025px) and (max-width: 1280px) {
             height: unset;
-            margin-top: 15vw;
+            margin-top: 0vw;
+            margin-bottom: 10vw;
             flex-direction: column;
+        }
+        
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape){
+            height: unset;
+            padding: 6vw 5% 0px;
+            margin-top: -5vw;
+            margin-bottom: 20vw;
         }
     `
 
@@ -49,6 +57,10 @@ export default function DoorDeliveryPage() {
 
         @media screen and (max-width: 1000px) {
             margin-top: 30%;
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1280px) and (orientation: landscape){
+            margin-bottom: 20%;
         }
     `
     const ContainerDiv = styled.div`
@@ -77,11 +89,27 @@ export default function DoorDeliveryPage() {
             top: 20vw;
             // transform: translate(-57%, -50%);
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape){
+            left: 28vw;
+            top: -35vw;
+            width: 52vw;
+            margin-top: 8%;
+            overflow: hidden;
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1280px) and (orientation: landscape){
+            left: 35vw;
+            top: -50vw;
+            width: 50vw;
+            margin-top: 8%;
+            overflow: hidden;
+        }
     `
     const AppDiv = styled.div`
         position: absolute;
         left: 38%;
-        top: -15%;
+        top: -8%;
         width: 19vw;
         font-size: 0px;
         border-radius: 35px;
@@ -92,6 +120,18 @@ export default function DoorDeliveryPage() {
             top: 0vw;
             width: 50vw;
             filter: none;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            left: 54vw;
+            top: -36vw;
+            width: 23vw;
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1280px) and (orientation: landscape) {
+            left: 55vw;
+            top: -51vw;
+            width: 23vw;
         }
     `
     const MapImg = styled.img`
@@ -108,6 +148,18 @@ export default function DoorDeliveryPage() {
 
         @media only screen and (max-width: 1000px) {
             display: none;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            width: 31vw;
+            bottom: -8vh;
+            left: 29vw;
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1280px) and (orientation: landscape) {
+            width: 31vw;
+            bottom: 20vh;
+            left: 35vw;
         }
     `
     const AppImg = styled.img`
@@ -132,6 +184,22 @@ export default function DoorDeliveryPage() {
             white-space: unset;
             letter-spacing: -0.3vw;
             width: 92vw;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            font-size: 3.5vw;
+            line-height: 4vw;
+            white-space: unset;
+            letter-spacing: -0.3vw;
+            width: 30vw;
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1280px) and (orientation: landscape) {
+            font-size: 3.5vw;
+            line-height: 4vw;
+            white-space: unset;
+            letter-spacing: -0.3vw;
+            width: 30vw;
         }
     `
     const P = styled.p`

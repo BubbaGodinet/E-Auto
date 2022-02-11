@@ -134,6 +134,12 @@ export default function StartPage() {
             bottom: 1.5vw;
             left: 0vw;
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            width: 35vw;
+            bottom: 12vw;
+            left: -6vw;
+        }
     `
 
     const CarMiddle = styled.img`
@@ -162,6 +168,12 @@ export default function StartPage() {
             bottom: 0vw;
             left: 20vw;
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            width: 45vw;
+            bottom: 10vw;
+            left: 9vw;
+        }
     `
     
     const CarRight= styled.img`
@@ -188,16 +200,15 @@ export default function StartPage() {
             bottom: 2vw;
             left: 49vw;
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            width: 40vw;
+            bottom: 12.7vw;
+            left: 27vw;
+        }
     `
     const AppImg = styled.img`
         width: 100%;
-        position: absolute;
-        right: 8%;
-        top: 100px;
-        width: 36.7vh;
-        font-size: 0px;
-        border-radius: 35px;
-        filter: drop-shadow(rgba(0, 0, 0, 0.4) -20px 20px 25px);
     ` 
     useEffect(() => {
         let tl = gsap.timeline();

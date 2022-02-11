@@ -16,7 +16,7 @@ export default function CustomerPage() {
         justify-content: center;
         align-items: flex-end;
         position: relative;
-        height: 45vw;
+        height: 80vh;
         width: 40vw;
 
         @media screen and (max-width: 1000px) {
@@ -62,11 +62,10 @@ export default function CustomerPage() {
         }
     `
     const ReviewDiv = styled.div`
-        transform: translateY(0%);
         opacity: 1;
         flex: 1 1 0%;
         margin-left: 6vw;
-        margin-top: 3vw;
+        margin-top: 10vh;
         display: block;
 
         @media screen and (max-width: 1000px) {

@@ -31,6 +31,12 @@ export default function SwitchCarsPage() {
             width: 77vw;
             transform: translate(-10%, 2vh);
         }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            height: 85vh;
+            width: 50vw;
+            transform: translate(-10%, 2vh);
+        }
     `
     const InnerCarDiv = styled.div`
         position: absolute;
@@ -67,19 +73,22 @@ export default function SwitchCarsPage() {
 
         @media screen and (max-width: 480px) {
             right: 2vw;
-            top: 50%;
             width: 50vw;
         }
 
         @media screen and (min-width: 481px) and (max-width:767px) {
             right: 4vw;
-            top: 50%;
             width: 48vw;
         }
 
         @media screen and (min-width: 768px) and (max-width: 1200px) {
             left: 35%;
             width: 50vw;
+        }
+        
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            left: 35%;
+            width: 25vw;
         }
     `
     const AppImg = styled.img`
@@ -95,6 +104,11 @@ export default function SwitchCarsPage() {
             margin-left: 0vw;
             margin-top: 0vh;
         }
+        
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            margin-left: 15vw;
+            margin-top: 25vh;
+        }
     `
     const TitleH2 = styled.h2`
         transform: translateY(0%);
@@ -109,6 +123,13 @@ export default function SwitchCarsPage() {
         @media screen and (max-width: 1024px) {
             font-size: 7vw;
             line-height: 8vw;
+            white-space: unset;
+            letter-spacing: -0.3vw;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            font-size: 4vw;
+            line-height: 5vw;
             white-space: unset;
             letter-spacing: -0.3vw;
         }
@@ -129,6 +150,12 @@ export default function SwitchCarsPage() {
             font-size: 4vw;
             width: 95vw;
             line-height: 7vw;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+            font-size: 1vw;
+            width: 30vw;
+            line-height: 2vw;
         }
     `
 
